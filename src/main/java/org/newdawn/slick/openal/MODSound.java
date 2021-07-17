@@ -37,7 +37,7 @@ public class MODSound extends AudioImpl {
 	}
 	
 	/**
-	 * @see AudioImpl#playAsMusic(float, float, boolean)
+	 * @see org.newdawn.slick.openal.AudioImpl#playAsMusic(float, float, boolean)
 	 */
 	public int playAsMusic(float pitch, float gain, boolean loop) {
 		cleanUpSource();
@@ -76,28 +76,28 @@ public class MODSound extends AudioImpl {
 	}
 	
 	/**
-	 * @see AudioImpl#playAsSoundEffect(float, float, boolean)
+	 * @see org.newdawn.slick.openal.AudioImpl#playAsSoundEffect(float, float, boolean)
 	 */
 	public int playAsSoundEffect(float pitch, float gain, boolean loop) {
 		return -1;
 	}
 
 	/**
-	 * @see AudioImpl#stop()
+	 * @see org.newdawn.slick.openal.AudioImpl#stop()
 	 */
 	public void stop() {
 		store.setMOD(null);
 	}
 
 	/**
-	 * @see AudioImpl#getPosition()
+	 * @see org.newdawn.slick.openal.AudioImpl#getPosition()
 	 */
 	public float getPosition() {
 		throw new RuntimeException("Positioning on modules is not currently supported");
 	}
 
 	/**
-	 * @see AudioImpl#setPosition(float)
+	 * @see org.newdawn.slick.openal.AudioImpl#setPosition(float)
 	 */
 	public boolean setPosition(float position) {
 		throw new RuntimeException("Positioning on modules is not currently supported");

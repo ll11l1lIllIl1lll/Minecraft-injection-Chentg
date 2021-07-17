@@ -46,7 +46,7 @@ public class ESP extends Module {
     }
 
     public void renderBox(Entity entity,double r,double g, double b) {
-        if(entity.isInvisible() && !invisible.getValueState().booleanValue()) {
+        if(entity.isInvisible() && !invisible.getValueState()) {
             return;
         }
         double x = RenderUtil.interpolate((double)entity.posX, (double)entity.lastTickPosX, JReflectUtility.getRenderPartialTicks());

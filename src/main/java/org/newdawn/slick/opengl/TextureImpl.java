@@ -94,14 +94,14 @@ public class TextureImpl implements Texture {
     }
     
     /**
-	 * @see Texture#hasAlpha()
+	 * @see org.newdawn.slick.opengl.Texture#hasAlpha()
 	 */
     public boolean hasAlpha() {
     	return alpha;
     }
     
     /**
-	 * @see Texture#getTextureRef()
+	 * @see org.newdawn.slick.opengl.Texture#getTextureRef()
 	 */
     public String getTextureRef() {
     	return ref;
@@ -134,7 +134,7 @@ public class TextureImpl implements Texture {
     }
     
     /**
-	 * @see Texture#bind()
+	 * @see org.newdawn.slick.opengl.Texture#bind()
 	 */
     public void bind() {
     	if (lastBind != this) {
@@ -165,42 +165,42 @@ public class TextureImpl implements Texture {
     }
     
     /**
-	 * @see Texture#getImageHeight()
+	 * @see org.newdawn.slick.opengl.Texture#getImageHeight()
 	 */
     public int getImageHeight() {
         return height;
     }
     
     /**
-	 * @see Texture#getImageWidth()
+	 * @see org.newdawn.slick.opengl.Texture#getImageWidth()
 	 */
     public int getImageWidth() {
         return width;
     }
     
     /**
-	 * @see Texture#getHeight()
+	 * @see org.newdawn.slick.opengl.Texture#getHeight()
 	 */
     public float getHeight() {
         return heightRatio;
     }
     
     /**
-	 * @see Texture#getWidth()
+	 * @see org.newdawn.slick.opengl.Texture#getWidth()
 	 */
     public float getWidth() {
         return widthRatio;
     }
     
     /**
-	 * @see Texture#getTextureHeight()
+	 * @see org.newdawn.slick.opengl.Texture#getTextureHeight()
 	 */
     public int getTextureHeight() {
     	return texHeight;
     }
 
     /**
-	 * @see Texture#getTextureWidth()
+	 * @see org.newdawn.slick.opengl.Texture#getTextureWidth()
 	 */
     public int getTextureWidth() {
     	return texWidth;
@@ -247,7 +247,7 @@ public class TextureImpl implements Texture {
     }
     
     /**
-	 * @see Texture#release()
+	 * @see org.newdawn.slick.opengl.Texture#release()
 	 */
     public void release() {
         IntBuffer texBuf = createIntBuffer(1); 
@@ -268,7 +268,7 @@ public class TextureImpl implements Texture {
     }
     
     /**
-	 * @see Texture#getTextureID()
+	 * @see org.newdawn.slick.opengl.Texture#getTextureID()
 	 */
     public int getTextureID() {
     	return textureID;
@@ -298,7 +298,7 @@ public class TextureImpl implements Texture {
     }    
     
     /**
-	 * @see Texture#getTextureData()
+	 * @see org.newdawn.slick.opengl.Texture#getTextureData()
 	 */
     public byte[] getTextureData() {
     	ByteBuffer buffer = BufferUtils.createByteBuffer((hasAlpha() ? 4 : 3) * texWidth * texHeight);
@@ -313,7 +313,7 @@ public class TextureImpl implements Texture {
     }
 
     /**
-     * @see Texture#setTextureFilter(int)
+     * @see org.newdawn.slick.opengl.Texture#setTextureFilter(int)
      */
 	public void setTextureFilter(int textureFilter) {
 		bind();

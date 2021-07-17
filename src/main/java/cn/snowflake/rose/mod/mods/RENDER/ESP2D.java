@@ -92,7 +92,7 @@ public class ESP2D extends Module {
             }
             if (!shouldRender) continue;
             GlStateManager.pushMatrix();
-            if ((INVISIBLES.getValueState() || !ent.isInvisible()) && ent instanceof EntityPlayer && !(ent instanceof EntityPlayerSP)) {
+            if ((INVISIBLES.getValueState() || !ent.isInvisible()) && !(ent instanceof EntityPlayerSP)) {
                 try {
                     boolean hovering;
                     GL11.glEnable((int)3042);

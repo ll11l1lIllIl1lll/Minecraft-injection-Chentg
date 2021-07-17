@@ -4,9 +4,8 @@ import cn.snowflake.rose.Client;
 import cn.snowflake.rose.mod.Module;
 import cn.snowflake.rose.mod.mods.WORLD.Spammer;
 import cn.snowflake.rose.mod.mods.WORLD.Xray;
-import cn.snowflake.rose.notification.Notification;
+import cn.snowflake.rose.ui.notification.Notification;
 import cn.snowflake.rose.utils.Value;
-import io.netty.util.internal.ConcurrentSet;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import org.lwjgl.input.Keyboard;
@@ -14,7 +13,6 @@ import org.lwjgl.input.Keyboard;
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import java.io.*;
-import java.lang.reflect.Field;
 
 public class FileManager {
     private Minecraft mc = Minecraft.getMinecraft();

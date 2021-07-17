@@ -247,8 +247,9 @@ public class Aura extends Module {
         double z = target.lastTickPosZ
                 + (target.posZ - target.lastTickPosZ) * JReflectUtility.getRenderPartialTicks()
                 - RenderManager.renderPosZ;
-        drawCylinderESP(target,x, y + target.getEyeHeight() + 0.5d, z);
+        RenderUtil.drawCylinderESP(target,x, y + target.getEyeHeight() + 0.5d, z);
     }
+
     private void drawMultiESP() {
  
         if (!this.getTargets().isEmpty() ) {
@@ -264,68 +265,13 @@ public class Aura extends Module {
 	                   double z = target.lastTickPosZ
 	                           + (target.posZ - target.lastTickPosZ) * JReflectUtility.getRenderPartialTicks()
 	                           - RenderManager.renderPosZ;
-	            	   drawCylinderESP(target,x, y + target.getEyeHeight() + 0.5d, z);
+	            	   RenderUtil.drawCylinderESP(target,x, y + target.getEyeHeight() + 0.5d, z);
 	            
 	               }
 	           }
         }
     }
 
-    public static void disableSmoothLine() {
-        GL11.glEnable((int) 3553);
-        GL11.glEnable((int) 2929);
-        GL11.glDisable((int) 3042);
-        GL11.glEnable((int) 3008);
-        GL11.glDepthMask((boolean) true);
-        GL11.glCullFace((int) 1029);
-        GL11.glDisable((int) 2848);
-        GL11.glHint((int) 3154, (int) 4352);
-        GL11.glHint((int) 3155, (int) 4352);
-    }
-
-    public static void enableSmoothLine(float width) {
-        GL11.glDisable((int) 3008);
-        GL11.glEnable((int) 3042);
-        GL11.glBlendFunc((int) 770, (int) 771);
-        GL11.glDisable((int) 3553);
-        GL11.glDisable((int) 2929);
-        GL11.glDepthMask((boolean) false);
-        GL11.glEnable((int) 2884);
-        GL11.glEnable((int) 2848);
-        GL11.glHint((int) 3154, (int) 4354);
-        GL11.glHint((int) 3155, (int) 4354);
-        GL11.glLineWidth((float) width);
-    }
-
-    public void drawCylinderESP(EntityLivingBase entity, double x, double y, double z) {
-    	Cylinder c = new Cylinder();
-    	RenderUtil.pre3D();
-        GlStateManager.disableLighting();
-        GL11.glTranslated((double) x, (double) y, (double) z);
-        GL11.glRotatef((float) (-entity.width), (float) 0.0f, (float) 1.0f, (float) 0.0f);
-        RenderUtil.glColor(new Color(1, 89, 1, 150).getRGB());// color4f
-        enableSmoothLine(0.1f);//
-        GL11.glRotatef((float) -90.0f, (float) 1.0f, (float) 0.0f, (float) 0.0f);
-        c.setDrawStyle(100011);
-        c.draw(0.0f, 0.2f, 0.5f, 5, 300);
-        disableSmoothLine();
-        RenderUtil.post3D();
-        RenderUtil.pre3D();
-        GL11.glPushMatrix();
-        GlStateManager.disableLighting();
-        GL11.glTranslated((double) x, (double) y + 0.5f, (double) z);
-        GL11.glRotatef((float) (-entity.width), (float) 0.0f, (float) 1.0f, (float) 0.0f);
-        RenderUtil.glColor(new Color(2, 168, 2, 150).getRGB());// color4f
-        enableSmoothLine(0.1f);//
-        GL11.glRotatef((float) -90.0f, (float) 1.0f, (float) 0.0f, (float) 0.0f);
-        c.setDrawStyle(100011);
-        c.draw(0.2f, 0.0f, 0.5f, 5, 300);
-        disableSmoothLine();
-//        GlStateManager.enableLighting();
-        GL11.glPopMatrix();
-        RenderUtil.post3D();
-      
-    }
     
 	
     private void DoMultiAttack() {
@@ -375,11 +321,11 @@ public class Aura extends Module {
         int aps = (this.cps.getValueState()).intValue();
         int DelayValue = 1000 / aps + this.random.nextInt(50) - 30;
         if ((double) mc.thePlayer.getDistanceToEntity(target) <= this.range.getValueState().floatValue() && this.timer2.isDelayComplete((DelayValue - 20 + this.random.nextInt(50)))) {
-            this.atttack();
+            this.attack();
             timer2.reset();
         }
     }
-    private void atttack() {
+    private void attack() {
         if (block.getValueState() && mc.thePlayer.isBlocking()&& mc.thePlayer.getCurrentEquippedItem() != null && mc.thePlayer.inventory.getCurrentItem().getItem() instanceof ItemSword) {
             stopAutoBlock();
         }

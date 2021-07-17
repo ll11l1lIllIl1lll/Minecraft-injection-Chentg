@@ -5,6 +5,7 @@ import cn.snowflake.rose.events.impl.EventPacket;
 import cn.snowflake.rose.events.impl.EventhandleWindowItem;
 import cn.snowflake.rose.mod.Category;
 import cn.snowflake.rose.mod.Module;
+import cn.snowflake.rose.mod.mods.WORLD.irc.core.IRC;
 import cn.snowflake.rose.utils.client.ChatUtil;
 import com.darkmagician6.eventapi.EventTarget;
 import net.minecraft.client.gui.inventory.GuiContainer;
@@ -19,7 +20,9 @@ public class AntiBackpack extends Module {
 
     public AntiBackpack() {
         super("AntiBackpack", "Anti Backpack", Category.FORGE);
-
+        if (!IRC.beta){
+            this.setWorking(false);
+        }
     }
 
 

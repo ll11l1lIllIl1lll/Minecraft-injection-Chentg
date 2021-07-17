@@ -28,7 +28,7 @@ public class ClientLoader implements IFMLLoadingPlugin {
 
 	@Override
 	public void injectData(Map<String, Object> data) {
-		runtimeObfuscationEnabled = (boolean)data.get("runtimeObfuscationEnabled");
+		runtimeObfuscationEnabled = (boolean)data.get("runtimeDeobfuscationEnabled");
 	}
 
 	@Override

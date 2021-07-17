@@ -131,7 +131,7 @@ public strictfp class Circle extends Ellipse {
     }
     
 	/**
-	 * @see Ellipse#findCenter()
+	 * @see org.newdawn.slick.geom.Ellipse#findCenter()
 	 */
     protected void findCenter() {
         center = new float[2];
@@ -140,7 +140,7 @@ public strictfp class Circle extends Ellipse {
     }
 
     /**
-     * @see Ellipse#calculateRadius()
+     * @see org.newdawn.slick.geom.Ellipse#calculateRadius()
      */
     protected void calculateRadius() {
         boundingCircleRadius = radius;

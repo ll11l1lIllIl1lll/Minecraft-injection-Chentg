@@ -5,6 +5,7 @@ import cn.snowflake.rose.events.impl.EventPacket;
 import cn.snowflake.rose.events.impl.EventUpdate;
 import cn.snowflake.rose.mod.Category;
 import cn.snowflake.rose.mod.Module;
+import cn.snowflake.rose.mod.mods.WORLD.irc.core.IRC;
 import cn.snowflake.rose.utils.Value;
 import cn.snowflake.rose.utils.client.ChatUtil;
 import cn.snowflake.rose.utils.time.TimeHelper;
@@ -27,7 +28,9 @@ public class FakeLag extends Module
         this.lagValue = new Value<Double>("FakeLag_Delay", 3000.0, 300.0, 5000.0);
         this.packetList = new CopyOnWriteArrayList<C03PacketPlayer>();
         this.lagHelper = new TimeHelper();
-//        working = false;
+        if (!IRC.beta){
+            working = false;
+        }
     }
 
     @Override

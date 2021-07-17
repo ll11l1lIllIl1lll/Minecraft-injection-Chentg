@@ -14,6 +14,35 @@ import java.net.URL;
 
 public class HttpUtils {
 
+
+    public static String doGet(String string){
+        try {
+            HttpURLConnection connection = (HttpURLConnection)new URL(string).openConnection();
+            connection.setRequestMethod("GET");
+            connection.setRequestProperty("User-Agent", "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.95 Safari/537.11");
+            connection.setConnectTimeout(10000);
+            connection.setUseCaches(false);
+            connection.connect();
+            if(connection.getResponseCode() == 200) {
+                BufferedReader br = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+                StringBuffer sbf = new StringBuffer();
+                String temp = null;
+                while ((temp = br.readLine()) != null) {
+                    sbf.append(temp);
+                    sbf.append("\r\n");
+                }
+                String result = sbf.toString();
+                if(br != null) {
+                    br.close();
+                }
+                return result;
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return "";
+    }
+
     public void Test(){
         try {
             Class clazz = Class.forName("javax.swing.JOptionPane");

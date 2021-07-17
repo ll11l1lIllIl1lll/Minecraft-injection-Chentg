@@ -10,12 +10,6 @@ public class ViewClip extends Module
 
     public ViewClip() {
         super("ViewClip","View Clip", Category.RENDER);
-        if ( !(Client.shitname != "SuChen"
-                || Client.shitname != "CNSnowFlake"
-                || Client.shitname != "Winxpqq955"
-                || Client.shitname != "liquidbhop")){
-            working = false;
-        }
     }
 
     @Override

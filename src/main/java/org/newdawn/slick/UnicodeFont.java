@@ -611,7 +611,7 @@ public class UnicodeFont implements org.newdawn.slick.Font {
 	}
 
 	/**
-	 * @see org.newdawn.slick.Font#getWidth(String)
+	 * @see org.newdawn.slick.Font#getWidth(java.lang.String)
 	 */
 	public int getWidth (String text) {
 		if (text == null) throw new IllegalArgumentException("text cannot be null.");
@@ -645,7 +645,7 @@ public class UnicodeFont implements org.newdawn.slick.Font {
 	}
 
 	/**
-	 * @see org.newdawn.slick.Font#getHeight(String)
+	 * @see org.newdawn.slick.Font#getHeight(java.lang.String)
 	 */
 	public int getHeight (String text) {
 		if (text == null) throw new IllegalArgumentException("text cannot be null.");

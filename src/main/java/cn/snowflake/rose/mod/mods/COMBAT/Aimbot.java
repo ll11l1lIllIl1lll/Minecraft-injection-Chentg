@@ -96,7 +96,6 @@ public class Aimbot extends Module {
 
 		if (canTarget(target)) {
 			if(targetinfo.getValueState()) {
-			    NativeMethod.method1();
 
 				mc.fontRenderer.drawStringWithShadow(
 	                    "HP: " + target.getHealth(),
@@ -235,7 +234,6 @@ public class Aimbot extends Module {
 
 
     private boolean canTarget(EntityLivingBase entity) {
-        NativeMethod.method1();
         if(!RotationUtil.canEntityBeSeen(entity) && !throughwall.getValueState()) {
             return false;
         }

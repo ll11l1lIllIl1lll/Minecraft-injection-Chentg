@@ -58,56 +58,56 @@ public class ImageIOImageData implements LoadableImageData {
     private boolean edging = true;
     
     /**
-     * @see ImageData#getDepth()
+     * @see org.newdawn.slick.opengl.ImageData#getDepth()
      */
 	public int getDepth() {
 		return depth;
 	}
 
 	/**
-	 * @see ImageData#getHeight()
+	 * @see org.newdawn.slick.opengl.ImageData#getHeight()
 	 */
 	public int getHeight() {
 		return height;
 	}
 
 	/**
-	 * @see ImageData#getTexHeight()
+	 * @see org.newdawn.slick.opengl.ImageData#getTexHeight()
 	 */
 	public int getTexHeight() {
 		return texHeight;
 	}
 
 	/**
-	 * @see ImageData#getTexWidth()
+	 * @see org.newdawn.slick.opengl.ImageData#getTexWidth()
 	 */
 	public int getTexWidth() {
 		return texWidth;
 	}
 
 	/**
-	 * @see ImageData#getWidth()
+	 * @see org.newdawn.slick.opengl.ImageData#getWidth()
 	 */
 	public int getWidth() {
 		return width;
 	}
 
 	/**
-	 * @see LoadableImageData#loadImage(InputStream)
+	 * @see org.newdawn.slick.opengl.LoadableImageData#loadImage(java.io.InputStream)
 	 */
 	public ByteBuffer loadImage(InputStream fis) throws IOException {
 		return loadImage(fis, true, null);
 	}
 
 	/**
-	 * @see LoadableImageData#loadImage(InputStream, boolean, int[])
+	 * @see org.newdawn.slick.opengl.LoadableImageData#loadImage(java.io.InputStream, boolean, int[])
 	 */
 	public ByteBuffer loadImage(InputStream fis, boolean flipped, int[] transparent) throws IOException {
 		return loadImage(fis, flipped, false, transparent);
 	}
 
 	/**
-	 * @see LoadableImageData#loadImage(InputStream, boolean, boolean, int[])
+	 * @see org.newdawn.slick.opengl.LoadableImageData#loadImage(java.io.InputStream, boolean, boolean, int[])
 	 */
 	public ByteBuffer loadImage(InputStream fis, boolean flipped, boolean forceAlpha, int[] transparent) throws IOException {
 		if (transparent != null) {
@@ -212,7 +212,7 @@ public class ImageIOImageData implements LoadableImageData {
 	}
 	
 	/**
-	 * @see ImageData#getImageBufferData()
+	 * @see org.newdawn.slick.opengl.ImageData#getImageBufferData()
 	 */
 	public ByteBuffer getImageBufferData() {
 		throw new RuntimeException("ImageIOImageData doesn't store it's image.");
@@ -236,7 +236,7 @@ public class ImageIOImageData implements LoadableImageData {
 	}
 
 	/**
-	 * @see LoadableImageData#configureEdging(boolean)
+	 * @see org.newdawn.slick.opengl.LoadableImageData#configureEdging(boolean)
 	 */
 	public void configureEdging(boolean edging) {
 		this.edging = edging;

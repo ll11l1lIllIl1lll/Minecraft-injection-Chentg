@@ -120,7 +120,7 @@ public class Path extends Shape {
 	}
 
 	/**
-	 * @see Shape#createPoints()
+	 * @see org.newdawn.slick.geom.Shape#createPoints()
 	 */
 	protected void createPoints() {
 		points = new float[localPoints.size() * 2];
@@ -132,7 +132,7 @@ public class Path extends Shape {
 	}
 
 	/**
-	 * @see Shape#transform(Transform)
+	 * @see org.newdawn.slick.geom.Shape#transform(org.newdawn.slick.geom.Transform)
 	 */
 	public Shape transform(Transform transform) {
 		Path p = new Path(cx,cy);

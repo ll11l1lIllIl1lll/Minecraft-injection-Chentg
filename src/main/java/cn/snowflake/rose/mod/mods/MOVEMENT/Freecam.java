@@ -108,14 +108,6 @@ public class Freecam extends Module {
     @EventTarget
     public void onPacketSend(EventPacket event) {
         if (event.getType() == EventType.SEND ) {
-//            if (event.getPacket() instanceof C03PacketPlayer){
-//                C03PacketPlayer packet = (C03PacketPlayer)event.getPacket();
-//                JReflectUtility.setField(packet.getClass(),packet,"field_149479_a",this.posX);
-//                JReflectUtility.setField(packet.getClass(),packet,"field_149475_d",this.posY);
-//                JReflectUtility.setField(packet.getClass(),packet,"field_149478_c",this.posZ);
-//                JReflectUtility.setField(packet.getClass(),packet,"field_149473_f",this.rotPitch);
-//                JReflectUtility.setField(packet.getClass(),packet,"field_149476_e",this.rotYaw);
-//            }else
             if (event.getPacket() instanceof C03PacketPlayer.C06PacketPlayerPosLook){
                 event.setCancelled(true);
             }else if (event.getPacket() instanceof C03PacketPlayer.C04PacketPlayerPosition){
@@ -126,15 +118,14 @@ public class Freecam extends Module {
                 event.setCancelled(true);
             }
 
-            //packet.field_149479_a = this.posX;
-            //packet.field_149475_d = this.posY;
-            //packet.field_149478_c = this.posZ;
-            //packet.field_149476_e = this.rotYaw;
-            //packet.field_149473_f = this.rotPitch;
         }
-        if (event.getType() == EventType.RECIEVE && event.getPacket() instanceof S08PacketPlayerPosLook & Client.canCancle) {
+        if (event.getType() == EventType.RECIEVE && event.getPacket() instanceof S08PacketPlayerPosLook & Freecam.canCancle) {
             event.setCancelled(true);
         }
 
     }
+
+    public static boolean canCancle =false;
+
+
 }

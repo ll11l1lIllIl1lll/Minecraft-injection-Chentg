@@ -57,7 +57,7 @@ public class AudioImpl implements Audio {
 	}
 	
 	/**
-	 * @see Audio#stop()
+	 * @see org.newdawn.slick.openal.Audio#stop()
 	 */
 	public void stop() {
 		if (index != -1) {
@@ -67,7 +67,7 @@ public class AudioImpl implements Audio {
 	}
 	
 	/**
-	 * @see Audio#isPlaying()
+	 * @see org.newdawn.slick.openal.Audio#isPlaying()
 	 */
 	public boolean isPlaying() {
 		if (index != -1) {
@@ -78,7 +78,7 @@ public class AudioImpl implements Audio {
 	}
 	
 	/**
-	 * @see Audio#playAsSoundEffect(float, float, boolean)
+	 * @see org.newdawn.slick.openal.Audio#playAsSoundEffect(float, float, boolean)
 	 */
 	public int playAsSoundEffect(float pitch, float gain, boolean loop) {
 		index = store.playAsSound(buffer, pitch, gain, loop);
@@ -87,7 +87,7 @@ public class AudioImpl implements Audio {
 
 
 	/**
-	 * @see Audio#playAsSoundEffect(float, float, boolean, float, float, float)
+	 * @see org.newdawn.slick.openal.Audio#playAsSoundEffect(float, float, boolean, float, float, float)
 	 */
 	public int playAsSoundEffect(float pitch, float gain, boolean loop, float x, float y, float z) {
 		index = store.playAsSoundAt(buffer, pitch, gain, loop, x, y, z);
@@ -95,7 +95,7 @@ public class AudioImpl implements Audio {
 	}
 	
 	/**
-	 * @see Audio#playAsMusic(float, float, boolean)
+	 * @see org.newdawn.slick.openal.Audio#playAsMusic(float, float, boolean)
 	 */
 	public int playAsMusic(float pitch, float gain, boolean loop) {
 		store.playAsMusic(buffer, pitch, gain, loop);
@@ -118,7 +118,7 @@ public class AudioImpl implements Audio {
 	}
 	
 	/**
-	 * @see Audio#setPosition(float)
+	 * @see org.newdawn.slick.openal.Audio#setPosition(float)
 	 */
 	public boolean setPosition(float position) {
 		position = position % length;
@@ -131,7 +131,7 @@ public class AudioImpl implements Audio {
 	}
 
 	/**
-	 * @see Audio#getPosition()
+	 * @see org.newdawn.slick.openal.Audio#getPosition()
 	 */
 	public float getPosition() {
 		return AL10.alGetSourcef(store.getSource(index), AL11.AL_SEC_OFFSET);

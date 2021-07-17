@@ -27,42 +27,42 @@ public class EmptyImageData implements ImageData {
 	}
 	
 	/**
-	 * @see ImageData#getDepth()
+	 * @see org.newdawn.slick.opengl.ImageData#getDepth()
 	 */
 	public int getDepth() {
 		return 32;
 	}
 
 	/**
-	 * @see ImageData#getHeight()
+	 * @see org.newdawn.slick.opengl.ImageData#getHeight()
 	 */
 	public int getHeight() {
 		return height;
 	}
 
 	/**
-	 * @see ImageData#getImageBufferData()
+	 * @see org.newdawn.slick.opengl.ImageData#getImageBufferData()
 	 */
 	public ByteBuffer getImageBufferData() {
 		return BufferUtils.createByteBuffer(getTexWidth() * getTexHeight() * 4);
 	}
 
 	/**
-	 * @see ImageData#getTexHeight()
+	 * @see org.newdawn.slick.opengl.ImageData#getTexHeight()
 	 */
 	public int getTexHeight() {
 		return InternalTextureLoader.get2Fold(height);
 	}
 
 	/**
-	 * @see ImageData#getTexWidth()
+	 * @see org.newdawn.slick.opengl.ImageData#getTexWidth()
 	 */
 	public int getTexWidth() {
 		return InternalTextureLoader.get2Fold(width);
 	}
 
 	/**
-	 * @see ImageData#getWidth()
+	 * @see org.newdawn.slick.opengl.ImageData#getWidth()
 	 */
 	public int getWidth() {
 		return width;

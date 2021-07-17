@@ -1,10 +1,5 @@
 package cn.snowflake.rose.mod.mods.RENDER;
 
-import cn.snowflake.rose.Client;
-import cn.snowflake.rose.notification.Notification;
-import com.darkmagician6.eventapi.EventTarget;
-
-import cn.snowflake.rose.events.impl.EventRender2D;
 import cn.snowflake.rose.mod.Category;
 import cn.snowflake.rose.mod.Module;
 

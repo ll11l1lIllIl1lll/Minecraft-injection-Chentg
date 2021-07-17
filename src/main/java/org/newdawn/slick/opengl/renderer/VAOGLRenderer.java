@@ -47,7 +47,7 @@ public class VAOGLRenderer extends ImmediateModeOGLRenderer {
 	private int listMode = 0;
 	
 	/**
-	 * @see ImmediateModeOGLRenderer#initDisplay(int, int)
+	 * @see org.newdawn.slick.opengl.renderer.ImmediateModeOGLRenderer#initDisplay(int, int)
 	 */
 	public void initDisplay(int width, int height) {
 		super.initDisplay(width, height);
@@ -124,7 +124,7 @@ public class VAOGLRenderer extends ImmediateModeOGLRenderer {
 	}
 	
 	/**
-	 * @see ImmediateModeOGLRenderer#flush()
+	 * @see org.newdawn.slick.opengl.renderer.ImmediateModeOGLRenderer#flush()
 	 */
 	public void flush() {
 		super.flush();
@@ -133,7 +133,7 @@ public class VAOGLRenderer extends ImmediateModeOGLRenderer {
 	}
 	
 	/**
-	 * @see ImmediateModeOGLRenderer#glBegin(int)
+	 * @see org.newdawn.slick.opengl.renderer.ImmediateModeOGLRenderer#glBegin(int)
 	 */
 	public void glBegin(int geomType) {
 		if (listMode > 0) {
@@ -148,7 +148,7 @@ public class VAOGLRenderer extends ImmediateModeOGLRenderer {
 	}
 
 	/**
-	 * @see ImmediateModeOGLRenderer#glColor4f(float, float, float, float)
+	 * @see org.newdawn.slick.opengl.renderer.ImmediateModeOGLRenderer#glColor4f(float, float, float, float)
 	 */
 	public void glColor4f(float r, float g, float b, float a) {
 		a *= alphaScale;
@@ -165,7 +165,7 @@ public class VAOGLRenderer extends ImmediateModeOGLRenderer {
 	}
 
 	/**
-	 * @see ImmediateModeOGLRenderer#glEnd()
+	 * @see org.newdawn.slick.opengl.renderer.ImmediateModeOGLRenderer#glEnd()
 	 */
 	public void glEnd() {
 		if (listMode > 0) {
@@ -175,7 +175,7 @@ public class VAOGLRenderer extends ImmediateModeOGLRenderer {
 	}
 
 	/**
-	 * @see ImmediateModeOGLRenderer#glTexCoord2f(float, float)
+	 * @see org.newdawn.slick.opengl.renderer.ImmediateModeOGLRenderer#glTexCoord2f(float, float)
 	 */
 	public void glTexCoord2f(float u, float v) {
 		if (listMode > 0) {
@@ -188,7 +188,7 @@ public class VAOGLRenderer extends ImmediateModeOGLRenderer {
 	}
 
 	/**
-	 * @see ImmediateModeOGLRenderer#glVertex2f(float, float)
+	 * @see org.newdawn.slick.opengl.renderer.ImmediateModeOGLRenderer#glVertex2f(float, float)
 	 */
 	public void glVertex2f(float x, float y) {
 		if (listMode > 0) {
@@ -200,7 +200,7 @@ public class VAOGLRenderer extends ImmediateModeOGLRenderer {
 	}
 
 	/**
-	 * @see ImmediateModeOGLRenderer#glVertex3f(float, float, float)
+	 * @see org.newdawn.slick.opengl.renderer.ImmediateModeOGLRenderer#glVertex3f(float, float, float)
 	 */
 	public void glVertex3f(float x, float y, float z) {
 		if (listMode > 0) {
@@ -249,7 +249,7 @@ public class VAOGLRenderer extends ImmediateModeOGLRenderer {
 	}
 	
 	/**
-	 * @see ImmediateModeOGLRenderer#glBindTexture(int, int)
+	 * @see org.newdawn.slick.opengl.renderer.ImmediateModeOGLRenderer#glBindTexture(int, int)
 	 */
 	public void glBindTexture(int target, int id) {
 		applyBuffer();
@@ -257,7 +257,7 @@ public class VAOGLRenderer extends ImmediateModeOGLRenderer {
 	}
 
 	/**
-	 * @see ImmediateModeOGLRenderer#glBlendFunc(int, int)
+	 * @see org.newdawn.slick.opengl.renderer.ImmediateModeOGLRenderer#glBlendFunc(int, int)
 	 */
 	public void glBlendFunc(int src, int dest) {
 		applyBuffer();
@@ -265,7 +265,7 @@ public class VAOGLRenderer extends ImmediateModeOGLRenderer {
 	}
 
 	/**
-	 * @see ImmediateModeOGLRenderer#glCallList(int)
+	 * @see org.newdawn.slick.opengl.renderer.ImmediateModeOGLRenderer#glCallList(int)
 	 */
 	public void glCallList(int id) {
 		applyBuffer();
@@ -273,7 +273,7 @@ public class VAOGLRenderer extends ImmediateModeOGLRenderer {
 	}
 
 	/**
-	 * @see ImmediateModeOGLRenderer#glClear(int)
+	 * @see org.newdawn.slick.opengl.renderer.ImmediateModeOGLRenderer#glClear(int)
 	 */
 	public void glClear(int value) {
 		applyBuffer();
@@ -281,7 +281,7 @@ public class VAOGLRenderer extends ImmediateModeOGLRenderer {
 	}
 
 	/**
-	 * @see ImmediateModeOGLRenderer#glClipPlane(int, DoubleBuffer)
+	 * @see org.newdawn.slick.opengl.renderer.ImmediateModeOGLRenderer#glClipPlane(int, java.nio.DoubleBuffer)
 	 */
 	public void glClipPlane(int plane, DoubleBuffer buffer) {
 		applyBuffer();
@@ -289,7 +289,7 @@ public class VAOGLRenderer extends ImmediateModeOGLRenderer {
 	}
 
 	/**
-	 * @see ImmediateModeOGLRenderer#glColorMask(boolean, boolean, boolean, boolean)
+	 * @see org.newdawn.slick.opengl.renderer.ImmediateModeOGLRenderer#glColorMask(boolean, boolean, boolean, boolean)
 	 */
 	public void glColorMask(boolean red, boolean green, boolean blue, boolean alpha) {
 		applyBuffer();
@@ -297,7 +297,7 @@ public class VAOGLRenderer extends ImmediateModeOGLRenderer {
 	}
 
 	/**
-	 * @see ImmediateModeOGLRenderer#glDisable(int)
+	 * @see org.newdawn.slick.opengl.renderer.ImmediateModeOGLRenderer#glDisable(int)
 	 */
 	public void glDisable(int item) {
 		applyBuffer();
@@ -305,7 +305,7 @@ public class VAOGLRenderer extends ImmediateModeOGLRenderer {
 	}
 
 	/**
-	 * @see ImmediateModeOGLRenderer#glEnable(int)
+	 * @see org.newdawn.slick.opengl.renderer.ImmediateModeOGLRenderer#glEnable(int)
 	 */
 	public void glEnable(int item) {
 		applyBuffer();
@@ -313,7 +313,7 @@ public class VAOGLRenderer extends ImmediateModeOGLRenderer {
 	}
 
 	/**
-	 * @see ImmediateModeOGLRenderer#glLineWidth(float)
+	 * @see org.newdawn.slick.opengl.renderer.ImmediateModeOGLRenderer#glLineWidth(float)
 	 */
 	public void glLineWidth(float width) {
 		applyBuffer();
@@ -321,7 +321,7 @@ public class VAOGLRenderer extends ImmediateModeOGLRenderer {
 	}
 
 	/**
-	 * @see ImmediateModeOGLRenderer#glPointSize(float)
+	 * @see org.newdawn.slick.opengl.renderer.ImmediateModeOGLRenderer#glPointSize(float)
 	 */
 	public void glPointSize(float size) {
 		applyBuffer();
@@ -329,7 +329,7 @@ public class VAOGLRenderer extends ImmediateModeOGLRenderer {
 	}
 
 	/**
-	 * @see ImmediateModeOGLRenderer#glPopMatrix()
+	 * @see org.newdawn.slick.opengl.renderer.ImmediateModeOGLRenderer#glPopMatrix()
 	 */
 	public void glPopMatrix() {
 		applyBuffer();
@@ -337,7 +337,7 @@ public class VAOGLRenderer extends ImmediateModeOGLRenderer {
 	}
 
 	/**
-	 * @see ImmediateModeOGLRenderer#glPushMatrix()
+	 * @see org.newdawn.slick.opengl.renderer.ImmediateModeOGLRenderer#glPushMatrix()
 	 */
 	public void glPushMatrix() {
 		applyBuffer();
@@ -345,7 +345,7 @@ public class VAOGLRenderer extends ImmediateModeOGLRenderer {
 	}
 
 	/**
-	 * @see ImmediateModeOGLRenderer#glRotatef(float, float, float, float)
+	 * @see org.newdawn.slick.opengl.renderer.ImmediateModeOGLRenderer#glRotatef(float, float, float, float)
 	 */
 	public void glRotatef(float angle, float x, float y, float z) {
 		applyBuffer();
@@ -353,7 +353,7 @@ public class VAOGLRenderer extends ImmediateModeOGLRenderer {
 	}
 
 	/**
-	 * @see ImmediateModeOGLRenderer#glScalef(float, float, float)
+	 * @see org.newdawn.slick.opengl.renderer.ImmediateModeOGLRenderer#glScalef(float, float, float)
 	 */
 	public void glScalef(float x, float y, float z) {
 		applyBuffer();
@@ -361,7 +361,7 @@ public class VAOGLRenderer extends ImmediateModeOGLRenderer {
 	}
 
 	/**
-	 * @see ImmediateModeOGLRenderer#glScissor(int, int, int, int)
+	 * @see org.newdawn.slick.opengl.renderer.ImmediateModeOGLRenderer#glScissor(int, int, int, int)
 	 */
 	public void glScissor(int x, int y, int width, int height) {
 		applyBuffer();
@@ -369,7 +369,7 @@ public class VAOGLRenderer extends ImmediateModeOGLRenderer {
 	}
 
 	/**
-	 * @see ImmediateModeOGLRenderer#glTexEnvi(int, int, int)
+	 * @see org.newdawn.slick.opengl.renderer.ImmediateModeOGLRenderer#glTexEnvi(int, int, int)
 	 */
 	public void glTexEnvi(int target, int mode, int value) {
 		applyBuffer();
@@ -377,7 +377,7 @@ public class VAOGLRenderer extends ImmediateModeOGLRenderer {
 	}
 
 	/**
-	 * @see ImmediateModeOGLRenderer#glTranslatef(float, float, float)
+	 * @see org.newdawn.slick.opengl.renderer.ImmediateModeOGLRenderer#glTranslatef(float, float, float)
 	 */
 	public void glTranslatef(float x, float y, float z) {
 		applyBuffer();
@@ -385,7 +385,7 @@ public class VAOGLRenderer extends ImmediateModeOGLRenderer {
 	}
 
 	/**
-	 * @see ImmediateModeOGLRenderer#glEndList()
+	 * @see org.newdawn.slick.opengl.renderer.ImmediateModeOGLRenderer#glEndList()
 	 */
 	public void glEndList() {
 		listMode--;
@@ -393,7 +393,7 @@ public class VAOGLRenderer extends ImmediateModeOGLRenderer {
 	}
 
 	/**
-	 * @see ImmediateModeOGLRenderer#glNewList(int, int)
+	 * @see org.newdawn.slick.opengl.renderer.ImmediateModeOGLRenderer#glNewList(int, int)
 	 */
 	public void glNewList(int id, int option) {
 		listMode++;
@@ -401,14 +401,14 @@ public class VAOGLRenderer extends ImmediateModeOGLRenderer {
 	}
 
 	/**
-	 * @see SGL#getCurrentColor()
+	 * @see org.newdawn.slick.opengl.renderer.SGL#getCurrentColor()
 	 */
 	public float[] getCurrentColor() {
 		return color;
 	}
 	
 	/**
-	 * @see SGL#glLoadMatrix(FloatBuffer)
+	 * @see org.newdawn.slick.opengl.renderer.SGL#glLoadMatrix(java.nio.FloatBuffer)
 	 */
 	public void glLoadMatrix(FloatBuffer buffer) {
 		flushBuffer();

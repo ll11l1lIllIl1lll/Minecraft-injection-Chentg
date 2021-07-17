@@ -42,7 +42,7 @@ public class PlayerList extends Module {
 //                RenderUtil.drawRect(posX + 2, posY + height, posX + width, posY + height + 6, new Color(5, 5, 5, 150).getRGB());
                 RenderUtil.drawRoundedRectCSGO(posX, posY - 2, posX + width + 2, posY + height + 13,new Color(25,25,25).getRGB());
 
-                RenderUtil.drawGradientRect(posX + 2, posY , posX + width, posY + 1,true,
+                RenderUtil.drawGradientRect(posX + 2, posY , posX + width, posY + 0.5,true,
                         HUD.rainbow(100),
                         HUD.rainbow(1000));
 
@@ -51,7 +51,7 @@ public class PlayerList extends Module {
                 int fontY = posY;
                 RenderUtil.drawRoundedRectCSGO(posX, posY - 2, posX + Client.instance.fontManager.simpleton11.getStringWidth(("hp:" + (int)getTargets().get(0).getHealth() + " " +getTargets().get(0).getCommandSenderName() + " d: " + (int)getTargets().get(0).getDistanceToEntity(mc.thePlayer))) + 8, (posY + Client.instance.fontManager.simpleton13.FONT_HEIGHT + 5) + (7 * (getTargets().size())) ,new Color(25,25,25).getRGB());
 
-                RenderUtil.drawGradientRect(posX + 2, posY, posX + Client.instance.fontManager.simpleton11.getStringWidth(("hp:" + (int)getTargets().get(0).getHealth() + " " +getTargets().get(0).getCommandSenderName() + " d: " + (int)getTargets().get(0).getDistanceToEntity(mc.thePlayer))) + 6, posY + 1,true,
+                RenderUtil.drawGradientRect(posX + 2, posY, posX + Client.instance.fontManager.simpleton11.getStringWidth(("hp:" + (int)getTargets().get(0).getHealth() + " " +getTargets().get(0).getCommandSenderName() + " d: " + (int)getTargets().get(0).getDistanceToEntity(mc.thePlayer))) + 6, posY + 0.5,true,
                         HUD.rainbow(100),
                         HUD.rainbow(1000));
 

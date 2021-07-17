@@ -14,7 +14,7 @@ import org.w3c.dom.Element;
 public class GroupProcessor implements ElementProcessor {
 
 	/**
-	 * @see ElementProcessor#handles(Element)
+	 * @see org.newdawn.slick.svg.inkscape.ElementProcessor#handles(org.w3c.dom.Element)
 	 */
 	public boolean handles(Element element) {
 		if (element.getNodeName().equals("g")) {
@@ -24,7 +24,7 @@ public class GroupProcessor implements ElementProcessor {
 	}
 
 	/**O
-	 * @see ElementProcessor#process(Loader, Element, Diagram, Transform)
+	 * @see org.newdawn.slick.svg.inkscape.ElementProcessor#process(org.newdawn.slick.svg.Loader, org.w3c.dom.Element, org.newdawn.slick.svg.Diagram, org.newdawn.slick.geom.Transform)
 	 */
 	public void process(Loader loader, Element element, Diagram diagram, Transform t) throws ParsingException {
 		Transform transform = Util.getTransform(element);

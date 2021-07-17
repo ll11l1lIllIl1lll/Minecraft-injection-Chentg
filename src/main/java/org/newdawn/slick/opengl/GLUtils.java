@@ -16,7 +16,7 @@ public final class GLUtils {
         try {
         	Renderer.get().glGetError();
         } catch (NullPointerException e) {
-        	throw new RuntimeException("OpenGL based resources (images, assets.cn.snowflake.rose.manager.fonts, sprites etc) must be loaded as part of init() or the game loop. They cannot be loaded before initialisation.");
+        	throw new RuntimeException("OpenGL based resources (images, fonts, sprites etc) must be loaded as part of init() or the game loop. They cannot be loaded before initialisation.");
         }
 	}
 }

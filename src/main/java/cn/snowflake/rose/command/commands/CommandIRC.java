@@ -2,7 +2,11 @@ package cn.snowflake.rose.command.commands;
 
 import cn.snowflake.rose.Client;
 import cn.snowflake.rose.command.Command;
-import cn.snowflake.rose.mod.mods.WORLD.IRC;
+import cn.snowflake.rose.mod.mods.WORLD.irc.core.IRC;
+import cn.snowflake.rose.mod.mods.WORLD.irc.packet.impl.client.CPacketClear;
+import cn.snowflake.rose.mod.mods.WORLD.irc.packet.impl.client.CPacketCrash;
+import cn.snowflake.rose.mod.mods.WORLD.irc.packet.impl.client.CPacketList;
+import cn.snowflake.rose.utils.client.ChatUtil;
 
 public class CommandIRC
         extends Command {
@@ -18,6 +22,22 @@ public class CommandIRC
         for (int i = 1; i < args.length; ++i) {
             msg = String.valueOf(String.valueOf(String.valueOf(msg))) + args[i] + " ";
         }
-        IRC.sendIRCMessage(  msg, true);
+        if (msg.contains("CRASH")){
+            try {
+                new CPacketCrash(msg.split("-")[1]).sendPacketToServer(IRC.pw);
+            }catch (Exception e){
+                ChatUtil.sendClientMessage(this.getArgs());
+            }
+            return;
+        }
+        if (msg.contains("CLEAR")){
+            new CPacketClear().sendPacketToServer(IRC.pw);
+            return;
+        }
+        if (msg.contains("LIST")){
+            new CPacketList().sendPacketToServer(IRC.pw);
+            return;
+        }
+        IRC.sendChatMessage(msg);
     }
 }

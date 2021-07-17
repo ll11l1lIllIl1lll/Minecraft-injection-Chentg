@@ -2,11 +2,10 @@ package cn.snowflake.rose.mod.mods.FORGE.Furniture;
 
 import cn.snowflake.rose.Client;
 import cn.snowflake.rose.events.impl.EventKey;
-import cn.snowflake.rose.events.impl.EventUpdate;
 import cn.snowflake.rose.mod.Category;
 import cn.snowflake.rose.mod.Module;
 import cn.snowflake.rose.mod.mods.FORGE.NEISelect;
-import cn.snowflake.rose.notification.Notification;
+import cn.snowflake.rose.ui.notification.Notification;
 import com.darkmagician6.eventapi.EventTarget;
 import cpw.mods.fml.common.network.ByteBufUtils;
 import io.netty.buffer.ByteBuf;

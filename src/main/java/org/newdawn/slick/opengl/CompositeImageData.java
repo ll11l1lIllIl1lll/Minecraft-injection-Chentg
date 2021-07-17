@@ -30,21 +30,21 @@ public class CompositeImageData implements LoadableImageData  {
 	}
 	
 	/**
-	 * @see LoadableImageData#loadImage(InputStream)
+	 * @see org.newdawn.slick.opengl.LoadableImageData#loadImage(java.io.InputStream)
 	 */
 	public ByteBuffer loadImage(InputStream fis) throws IOException {
 		return loadImage(fis, false, null);
 	}
 
 	/**
-	 * @see LoadableImageData#loadImage(InputStream, boolean, int[])
+	 * @see org.newdawn.slick.opengl.LoadableImageData#loadImage(java.io.InputStream, boolean, int[])
 	 */
 	public ByteBuffer loadImage(InputStream fis, boolean flipped, int[] transparent) throws IOException {
 		return loadImage(fis, flipped, false, transparent);
 	}
 
 	/**
-	 * @see LoadableImageData#loadImage(InputStream, boolean, boolean, int[])
+	 * @see org.newdawn.slick.opengl.LoadableImageData#loadImage(java.io.InputStream, boolean, boolean, int[])
 	 */
 	public ByteBuffer loadImage(InputStream is, boolean flipped, boolean forceAlpha, int[] transparent) throws IOException {
 		CompositeIOException exception = new CompositeIOException();
@@ -86,7 +86,7 @@ public class CompositeImageData implements LoadableImageData  {
 	}
 	
 	/**
-	 * @see ImageData#getDepth()
+	 * @see org.newdawn.slick.opengl.ImageData#getDepth()
 	 */
 	public int getDepth() {
 		checkPicked();
@@ -95,7 +95,7 @@ public class CompositeImageData implements LoadableImageData  {
 	}
 
 	/**
-	 * @see ImageData#getHeight()
+	 * @see org.newdawn.slick.opengl.ImageData#getHeight()
 	 */
 	public int getHeight() {
 		checkPicked();
@@ -104,7 +104,7 @@ public class CompositeImageData implements LoadableImageData  {
 	}
 
 	/**
-	 * @see ImageData#getImageBufferData()
+	 * @see org.newdawn.slick.opengl.ImageData#getImageBufferData()
 	 */
 	public ByteBuffer getImageBufferData() {
 		checkPicked();
@@ -113,7 +113,7 @@ public class CompositeImageData implements LoadableImageData  {
 	}
 
 	/**
-	 * @see ImageData#getTexHeight()
+	 * @see org.newdawn.slick.opengl.ImageData#getTexHeight()
 	 */
 	public int getTexHeight() {
 		checkPicked();
@@ -122,7 +122,7 @@ public class CompositeImageData implements LoadableImageData  {
 	}
 
 	/**
-	 * @see ImageData#getTexWidth()
+	 * @see org.newdawn.slick.opengl.ImageData#getTexWidth()
 	 */
 	public int getTexWidth() {
 		checkPicked();
@@ -131,7 +131,7 @@ public class CompositeImageData implements LoadableImageData  {
 	}
 
 	/**
-	 * @see ImageData#getWidth()
+	 * @see org.newdawn.slick.opengl.ImageData#getWidth()
 	 */
 	public int getWidth() {
 		checkPicked();
@@ -140,7 +140,7 @@ public class CompositeImageData implements LoadableImageData  {
 	}
 
 	/**
-	 * @see LoadableImageData#configureEdging(boolean)
+	 * @see org.newdawn.slick.opengl.LoadableImageData#configureEdging(boolean)
 	 */
 	public void configureEdging(boolean edging) {
 		for (int i=0;i<sources.size();i++) {

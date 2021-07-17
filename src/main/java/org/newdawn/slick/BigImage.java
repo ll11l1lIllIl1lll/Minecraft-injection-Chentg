@@ -267,7 +267,7 @@ public class BigImage extends Image {
 	/**
 	 * Not supported in BigImage
 	 * 
-	 * @see Image#bind()
+	 * @see org.newdawn.slick.Image#bind()
 	 */
 	public void bind() {
 		throw new OperationNotSupportedException("Can't bind big images yet");
@@ -276,35 +276,35 @@ public class BigImage extends Image {
 	/**
 	 * Not supported in BigImage
 	 * 
-	 * @see Image#copy()
+	 * @see org.newdawn.slick.Image#copy()
 	 */
 	public Image copy() {
 		throw new OperationNotSupportedException("Can't copy big images yet");
 	}
 	
 	/**
-	 * @see Image#draw()
+	 * @see org.newdawn.slick.Image#draw()
 	 */
 	public void draw() {
 		draw(0,0);
 	}
 
 	/**
-	 * @see Image#draw(float, float, Color)
+	 * @see org.newdawn.slick.Image#draw(float, float, org.newdawn.slick.Color)
 	 */
 	public void draw(float x, float y, Color filter) {
 		draw(x,y,width,height,filter);
 	}
 
 	/**
-	 * @see Image#draw(float, float, float, Color)
+	 * @see org.newdawn.slick.Image#draw(float, float, float, org.newdawn.slick.Color)
 	 */
 	public void draw(float x, float y, float scale, Color filter) {
 		draw(x,y,width*scale,height*scale,filter);
 	}
 
 	/**
-	 * @see Image#draw(float, float, float, float, Color)
+	 * @see org.newdawn.slick.Image#draw(float, float, float, float, org.newdawn.slick.Color)
 	 */
 	public void draw(float x, float y, float width, float height, Color filter) {
 		float sx = width / realWidth;
@@ -336,7 +336,7 @@ public class BigImage extends Image {
 	}
 
 	/**
-	 * @see Image#draw(float, float, float, float, float, float, float, float)
+	 * @see org.newdawn.slick.Image#draw(float, float, float, float, float, float, float, float)
 	 */
 	public void draw(float x, float y, float x2, float y2, float srcx, float srcy, float srcx2, float srcy2) {
 		int srcwidth = (int) (srcx2 - srcx);
@@ -351,7 +351,7 @@ public class BigImage extends Image {
 	}
 
 	/**
-	 * @see Image#draw(float, float, float, float, float, float)
+	 * @see org.newdawn.slick.Image#draw(float, float, float, float, float, float)
 	 */
 	public void draw(float x, float y, float srcx, float srcy, float srcx2, float srcy2) {
 		int srcwidth = (int) (srcx2 - srcx);
@@ -361,28 +361,28 @@ public class BigImage extends Image {
 	}
 
 	/**
-	 * @see Image#draw(float, float, float, float)
+	 * @see org.newdawn.slick.Image#draw(float, float, float, float)
 	 */
 	public void draw(float x, float y, float width, float height) {
 		draw(x,y,width,height,Color.white);
 	}
 
 	/**
-	 * @see Image#draw(float, float, float)
+	 * @see org.newdawn.slick.Image#draw(float, float, float)
 	 */
 	public void draw(float x, float y, float scale) {
 		draw(x,y,scale,Color.white);
 	}
 
 	/**
-	 * @see Image#draw(float, float)
+	 * @see org.newdawn.slick.Image#draw(float, float)
 	 */
 	public void draw(float x, float y) {
 		draw(x,y,Color.white);
 	}
 
 	/**
-	 * @see Image#drawEmbedded(float, float, float, float)
+	 * @see org.newdawn.slick.Image#drawEmbedded(float, float, float, float)
 	 */
 	public void drawEmbedded(float x, float y, float width, float height) {
 		float sx = width / realWidth;
@@ -415,7 +415,7 @@ public class BigImage extends Image {
 	}
 
 	/**
-	 * @see Image#drawFlash(float, float, float, float)
+	 * @see org.newdawn.slick.Image#drawFlash(float, float, float, float)
 	 */
 	public void drawFlash(float x, float y, float width, float height) {
 		float sx = width / realWidth;
@@ -447,7 +447,7 @@ public class BigImage extends Image {
 	}
 
 	/**
-	 * @see Image#drawFlash(float, float)
+	 * @see org.newdawn.slick.Image#drawFlash(float, float)
 	 */
 	public void drawFlash(float x, float y) {
 		drawFlash(x,y,width,height);
@@ -456,7 +456,7 @@ public class BigImage extends Image {
 	/**
 	 * Not supported in BigImage
 	 * 
-	 * @see Image#endUse()
+	 * @see org.newdawn.slick.Image#endUse()
 	 */
 	public void endUse() {
 		if (lastBind != null) {
@@ -468,7 +468,7 @@ public class BigImage extends Image {
 	/**
 	 * Not supported in BigImage
 	 * 
-	 * @see Image#startUse()
+	 * @see org.newdawn.slick.Image#startUse()
 	 */
 	public void startUse() {
 	}
@@ -476,7 +476,7 @@ public class BigImage extends Image {
 	/**
 	 * Not supported in BigImage
 	 * 
-	 * @see Image#ensureInverted()
+	 * @see org.newdawn.slick.Image#ensureInverted()
 	 */
 	public void ensureInverted() {
 		throw new OperationNotSupportedException("Doesn't make sense for tiled operations");
@@ -485,14 +485,14 @@ public class BigImage extends Image {
 	/**
 	 * Not supported in BigImage
 	 * 
-	 * @see Image#getColor(int, int)
+	 * @see org.newdawn.slick.Image#getColor(int, int)
 	 */
 	public Color getColor(int x, int y) {
 		throw new OperationNotSupportedException("Can't use big images as buffers");
 	}
 
 	/**
-	 * @see Image#getFlippedCopy(boolean, boolean)
+	 * @see org.newdawn.slick.Image#getFlippedCopy(boolean, boolean)
 	 */
 	public Image getFlippedCopy(boolean flipHorizontal, boolean flipVertical) {
 		BigImage image = new BigImage();
@@ -533,21 +533,21 @@ public class BigImage extends Image {
 	/**
 	 * Not supported in BigImage
 	 * 
-	 * @see Image#getGraphics()
+	 * @see org.newdawn.slick.Image#getGraphics()
 	 */
 	public Graphics getGraphics() throws SlickException {
 		throw new OperationNotSupportedException("Can't use big images as offscreen buffers");
 	}
 
 	/** 
-	 * @see Image#getScaledCopy(float)
+	 * @see org.newdawn.slick.Image#getScaledCopy(float)
 	 */
 	public Image getScaledCopy(float scale) {
 		return getScaledCopy((int) (scale * width), (int) (scale * height));
 	}
 
 	/**
-	 * @see Image#getScaledCopy(int, int)
+	 * @see org.newdawn.slick.Image#getScaledCopy(int, int)
 	 */
 	public Image getScaledCopy(int width, int height) {
 		BigImage image = new BigImage();
@@ -564,7 +564,7 @@ public class BigImage extends Image {
 	}
 
 	/**
-	 * @see Image#getSubImage(int, int, int, int)
+	 * @see org.newdawn.slick.Image#getSubImage(int, int, int, int)
 	 */
 	public Image getSubImage(int x, int y, int width, int height) {
 		BigImage image = new BigImage();
@@ -634,21 +634,21 @@ public class BigImage extends Image {
 	/**
 	 * Not supported in BigImage
 	 * 
-	 * @see Image#getTexture()
+	 * @see org.newdawn.slick.Image#getTexture()
 	 */
 	public Texture getTexture() {
 		throw new OperationNotSupportedException("Can't use big images as offscreen buffers");
 	}
 
 	/**
-	 * @see Image#initImpl()
+	 * @see org.newdawn.slick.Image#initImpl()
 	 */
 	protected void initImpl() {
 		throw new OperationNotSupportedException("Can't use big images as offscreen buffers");
 	}
 
 	/**
-	 * @see Image#reinit()
+	 * @see org.newdawn.slick.Image#reinit()
 	 */
 	protected void reinit() {
 		throw new OperationNotSupportedException("Can't use big images as offscreen buffers");
@@ -657,7 +657,7 @@ public class BigImage extends Image {
 	/**
 	 * Not supported in BigImage
 	 * 
-	 * @see Image#setTexture(Texture)
+	 * @see org.newdawn.slick.Image#setTexture(org.newdawn.slick.opengl.Texture)
 	 */
 	public void setTexture(Texture texture) {
 		throw new OperationNotSupportedException("Can't use big images as offscreen buffers");
@@ -694,7 +694,7 @@ public class BigImage extends Image {
 	} 
 	
 	/**
-	 * @see Image#toString()
+	 * @see org.newdawn.slick.Image#toString()
 	 */
 	public String toString() {
 		return "[BIG IMAGE]";
@@ -714,7 +714,7 @@ public class BigImage extends Image {
 	}
 
 	/**
-	 * @see Image#draw(float, float, float, float, float, float, float, float, Color)
+	 * @see org.newdawn.slick.Image#draw(float, float, float, float, float, float, float, float, org.newdawn.slick.Color)
 	 */
 	public void draw(float x, float y, float x2, float y2, float srcx,
 			float srcy, float srcx2, float srcy2, Color filter) {	
@@ -730,14 +730,14 @@ public class BigImage extends Image {
 	}
 
 	/**
-	 * @see Image#drawCentered(float, float)
+	 * @see org.newdawn.slick.Image#drawCentered(float, float)
 	 */
 	public void drawCentered(float x, float y) {
 		throw new UnsupportedOperationException();
 	}
 
 	/**
-	 * @see Image#drawEmbedded(float, float, float, float, float, float, float, float, Color)
+	 * @see org.newdawn.slick.Image#drawEmbedded(float, float, float, float, float, float, float, float, org.newdawn.slick.Color)
 	 */
 	public void drawEmbedded(float x, float y, float x2, float y2, float srcx,
 			float srcy, float srcx2, float srcy2, Color filter) {
@@ -745,7 +745,7 @@ public class BigImage extends Image {
 	}
 
 	/**
-	 * @see Image#drawEmbedded(float, float, float, float, float, float, float, float)
+	 * @see org.newdawn.slick.Image#drawEmbedded(float, float, float, float, float, float, float, float)
 	 */
 	public void drawEmbedded(float x, float y, float x2, float y2, float srcx,
 			float srcy, float srcx2, float srcy2) {
@@ -753,14 +753,14 @@ public class BigImage extends Image {
 	}
 
 	/**
-	 * @see Image#drawFlash(float, float, float, float, Color)
+	 * @see org.newdawn.slick.Image#drawFlash(float, float, float, float, org.newdawn.slick.Color)
 	 */
 	public void drawFlash(float x, float y, float width, float height, Color col) {
 		throw new UnsupportedOperationException();
 	}
 
 	/**
-	 * @see Image#drawSheared(float, float, float, float)
+	 * @see org.newdawn.slick.Image#drawSheared(float, float, float, float)
 	 */
 	public void drawSheared(float x, float y, float hshear, float vshear) {
 		throw new UnsupportedOperationException();

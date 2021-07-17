@@ -7,7 +7,7 @@ import cn.snowflake.rose.mod.Module;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 
-import cn.snowflake.rose.notification.Notification;
+import cn.snowflake.rose.ui.notification.Notification;
 import com.darkmagician6.eventapi.EventTarget;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.GuiButton;

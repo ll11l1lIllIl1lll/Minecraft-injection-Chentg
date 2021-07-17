@@ -41,6 +41,8 @@ test-splits/
 /bin
 /Season
 
+.iml
+.iws
 .classpath
 .project
 /.settings

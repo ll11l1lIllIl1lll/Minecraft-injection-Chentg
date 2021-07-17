@@ -72,7 +72,7 @@ public class Curve extends Shape {
 	}
 
 	/**
-	 * @see Shape#createPoints()
+	 * @see org.newdawn.slick.geom.Shape#createPoints()
 	 */
 	protected void createPoints() {
 		float step = 1.0f / segments;
@@ -87,7 +87,7 @@ public class Curve extends Shape {
 	}
 	
 	/**
-	 * @see Shape#transform(Transform)
+	 * @see org.newdawn.slick.geom.Shape#transform(org.newdawn.slick.geom.Transform)
 	 */
 	public Shape transform(Transform transform) {
 		float[] pts = new float[8];

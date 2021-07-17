@@ -1,5 +1,6 @@
 package cn.snowflake.rose.transform.transforms;
 
+import cn.snowflake.rose.Chentg;
 import cn.snowflake.rose.Client;
 import cn.snowflake.rose.NativeMethod;
 import cn.snowflake.rose.events.impl.EventGuiOpen;
@@ -9,6 +10,7 @@ import cn.snowflake.rose.mod.Module;
 import cn.snowflake.rose.utils.asm.ASMUtil;
 import com.darkmagician6.eventapi.EventManager;
 import cpw.mods.fml.common.FMLCommonHandler;
+import me.skids.margeleisgay.AuthMain;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiChat;
 import net.minecraft.client.gui.GuiScreen;
@@ -20,9 +22,29 @@ import org.objectweb.asm.tree.*;
 
 public class TransformMinecraft implements Opcodes{
 
+    public static void method1(MethodNode method){
+        //if (!Chentg.isAuthed){
+        //   new AuthMain();
+        //}
+        //new TransformMinecraft.runTick();
+
+        InsnList insnList = new InsnList();
+        LabelNode labelNode = new LabelNode();
+        insnList.add(new FieldInsnNode(GETSTATIC, Type.getInternalName(Chentg.class), Chentg.class.getFields()[0].getName(),"Z"));
+        insnList.add(new JumpInsnNode(IFNE,labelNode));
+        insnList.add(new TypeInsnNode(NEW,Type.getInternalName(AuthMain.class)));
+        insnList.add(new InsnNode(DUP));
+        insnList.add(new MethodInsnNode(INVOKESPECIAL,Type.getInternalName(AuthMain.class),"<init>","()V", false));
+        insnList.add(new InsnNode(POP));
+        insnList.add(labelNode);
+        insnList.add(new MethodInsnNode(Opcodes.INVOKESTATIC, Type.getInternalName(TransformMinecraft.class), "runTick", "()V", false));
+
+        method.instructions.insert(method.instructions.getFirst(),insnList);
+    }
+
     public static void transformMinecraft(ClassNode clazz, MethodNode method) {
         if (method.name.equals("func_71407_l") || method.name.equals("runTick")){
-            NativeMethod.method1(method);
+           method1(method);
         }
         if ((( method.name.equalsIgnoreCase("func_71403_a") || method.name.equalsIgnoreCase("loadWorld") ) && method.desc.equalsIgnoreCase("(Lnet/minecraft/client/multiplayer/WorldClient;)V"))
         ){
@@ -62,7 +84,7 @@ public class TransformMinecraft implements Opcodes{
     public static void drawgui(){
         ScaledResolution scaledresolution = new ScaledResolution(Minecraft.getMinecraft(),Minecraft.getMinecraft().displayWidth,Minecraft.getMinecraft().displayHeight);
         float y = scaledresolution.getScaledHeight() - 35;
-        if(Minecraft.getMinecraft().theWorld != null && Client.init)
+        if(Minecraft.getMinecraft().theWorld != null && Client.instance != null)
         if(!(Minecraft.getMinecraft().currentScreen instanceof GuiChat))
             if (Client.instance.getNotificationManager() != null && Client.instance.getNotificationManager().getNotifications() != null)
                 for (int n = 0; n < Client.instance.getNotificationManager().getNotifications().size(); n++) {

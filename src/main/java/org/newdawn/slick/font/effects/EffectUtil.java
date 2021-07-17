@@ -50,7 +50,7 @@ public class EffectUtil {
 		g.setComposite(AlphaComposite.Clear);
 		g.fillRect(0, 0, GlyphPage.MAX_GLYPH_SIZE, GlyphPage.MAX_GLYPH_SIZE);
 		g.setComposite(AlphaComposite.SrcOver);
-		g.setColor(Color.white);
+		g.setColor(java.awt.Color.white);
 		return scratchImage;
 	}
 
@@ -235,28 +235,28 @@ public class EffectUtil {
 		}
 
 		/**
-		 * @see Value#setString(String)
+		 * @see org.newdawn.slick.font.effects.ConfigurableEffect.Value#setString(java.lang.String)
 		 */
 		public void setString(String value) {
 			this.value = value;
 		}
 
 		/**
-		 * @see Value#getString()
+		 * @see org.newdawn.slick.font.effects.ConfigurableEffect.Value#getString()
 		 */
 		public String getString() {
 			return value;
 		}
 
 		/**
-		 * @see Value#getName()
+		 * @see org.newdawn.slick.font.effects.ConfigurableEffect.Value#getName()
 		 */
 		public String getName() {
 			return name;
 		}
 
 		/**
-		 * @see Object#toString()
+		 * @see java.lang.Object#toString()
 		 */
 		public String toString() {
 			if (value == null) {

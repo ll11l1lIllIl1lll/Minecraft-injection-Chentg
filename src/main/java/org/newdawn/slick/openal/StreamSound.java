@@ -29,14 +29,14 @@ public class StreamSound extends AudioImpl {
 	}
 	
 	/**
-	 * @see AudioImpl#isPlaying()
+	 * @see org.newdawn.slick.openal.AudioImpl#isPlaying()
 	 */
 	public boolean isPlaying() {
 		return SoundStore.get().isPlaying(player);
 	}
 
 	/**
-	 * @see AudioImpl#playAsMusic(float, float, boolean)
+	 * @see org.newdawn.slick.openal.AudioImpl#playAsMusic(float, float, boolean)
 	 */
 	public int playAsMusic(float pitch, float gain, boolean loop) {
 		try {
@@ -72,35 +72,35 @@ public class StreamSound extends AudioImpl {
 	}
 	
 	/**
-	 * @see AudioImpl#playAsSoundEffect(float, float, boolean, float, float, float)
+	 * @see org.newdawn.slick.openal.AudioImpl#playAsSoundEffect(float, float, boolean, float, float, float)
 	 */
 	public int playAsSoundEffect(float pitch, float gain, boolean loop, float x, float y, float z) {
 		return playAsMusic(pitch, gain, loop);
 	}
 
 	/**
-	 * @see AudioImpl#playAsSoundEffect(float, float, boolean)
+	 * @see org.newdawn.slick.openal.AudioImpl#playAsSoundEffect(float, float, boolean)
 	 */
 	public int playAsSoundEffect(float pitch, float gain, boolean loop) {
 		return playAsMusic(pitch, gain, loop);
 	}
 
 	/**
-	 * @see AudioImpl#stop()
+	 * @see org.newdawn.slick.openal.AudioImpl#stop()
 	 */
 	public void stop() {
 		SoundStore.get().setStream(null);
 	}
 
 	/**
-	 * @see AudioImpl#setPosition(float)
+	 * @see org.newdawn.slick.openal.AudioImpl#setPosition(float)
 	 */
 	public boolean setPosition(float position) {
 		return player.setPosition(position);
 	}
 
 	/**
-	 * @see AudioImpl#getPosition()
+	 * @see org.newdawn.slick.openal.AudioImpl#getPosition()
 	 */
 	public float getPosition() {
 		return player.getPosition();

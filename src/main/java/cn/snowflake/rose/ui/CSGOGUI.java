@@ -6,8 +6,7 @@ import cn.snowflake.rose.management.ModManager;
 import cn.snowflake.rose.mod.Category;
 import cn.snowflake.rose.mod.Module;
 import cn.snowflake.rose.mod.mods.RENDER.ClickGui;
-import cn.snowflake.rose.notification.Notification;
-import cn.snowflake.rose.ui.skeet.ui.SkeetMenu;
+import cn.snowflake.rose.mod.mods.RENDER.HUD;
 import cn.snowflake.rose.utils.Value;
 import cn.snowflake.rose.utils.client.ChatUtil;
 import cn.snowflake.rose.utils.mcutil.GlStateManager;
@@ -214,6 +213,9 @@ public class CSGOGUI extends GuiScreen {
         RenderUtil.drawRect(startX + 151, startY - 8, startX + 296, startY  + 198,new Color(25, 25, 25,alpha).getRGB());
         RenderUtil.drawRect(startX + 149.5, startY - 8, startX + 150, startY  + 198,new Color(48, 48, 48,alpha).getRGB());
         RenderUtil.drawRect(startX + 150, startY -8, startX + 150.5, startY  + 198,new Color(0, 0, 0,alpha).getRGB());
+
+
+
 
 //        //value bar
 //        RenderUtil.drawRect(startX + 150, startY + 5, startX + 300, startY  + 198,new Color(64,64,64).getRGB());
@@ -673,6 +675,10 @@ public class CSGOGUI extends GuiScreen {
         RenderUtil.drawRect(startX + 60, startY - 8, startX + 300, startY  + 6,new Color(0, 0, 0,alpha).getRGB());
         RenderUtil.drawRect(startX + 60, startY - 8, startX + 300, startY  + 5.5,new Color(48, 48, 48,alpha).getRGB());
         RenderUtil.drawRect(startX + 60, startY - 8, startX + 300, startY  + 5,new Color(25, 25, 25,alpha).getRGB());
+
+        RenderUtil.drawGradientRect(startX - 17, startY - 6, startX +298, startY - 5.5,true,
+                HUD.rainbow(100),
+                HUD.rainbow1(System.nanoTime(),2f,1f).getRGB());
 
         if (ClickGui.info.getValueState()){
             mc.fontRenderer.drawString(description,startX+62,startY-4,new Color(180,180,180,alpha).getRGB());

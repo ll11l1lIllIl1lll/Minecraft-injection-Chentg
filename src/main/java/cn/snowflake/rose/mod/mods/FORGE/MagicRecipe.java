@@ -4,12 +4,11 @@ import cn.snowflake.rose.Client;
 import cn.snowflake.rose.events.impl.EventKey;
 import cn.snowflake.rose.mod.Category;
 import cn.snowflake.rose.mod.Module;
-import cn.snowflake.rose.notification.Notification;
+import cn.snowflake.rose.ui.notification.Notification;
 import com.darkmagician6.eventapi.EventTarget;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import net.minecraft.inventory.ContainerWorkbench;
-import net.minecraft.network.Packet;
 import net.minecraft.network.play.client.C17PacketCustomPayload;
 import org.lwjgl.input.Keyboard;
 

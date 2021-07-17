@@ -20,7 +20,7 @@ import org.w3c.dom.NodeList;
 public class DefsProcessor implements ElementProcessor {
 
 	/**
-	 * @see ElementProcessor#handles(Element)
+	 * @see org.newdawn.slick.svg.inkscape.ElementProcessor#handles(org.w3c.dom.Element)
 	 */
 	public boolean handles(Element element) {
 		if (element.getNodeName().equals("defs")) {
@@ -31,7 +31,7 @@ public class DefsProcessor implements ElementProcessor {
 	}
 
 	/**
-	 * @see ElementProcessor#process(Loader, Element, Diagram, Transform)
+	 * @see org.newdawn.slick.svg.inkscape.ElementProcessor#process(org.newdawn.slick.svg.Loader, org.w3c.dom.Element, org.newdawn.slick.svg.Diagram, org.newdawn.slick.geom.Transform)
 	 */
 	public void process(Loader loader, Element element, Diagram diagram, Transform transform) throws ParsingException {
 		NodeList patterns = element.getElementsByTagName("pattern");

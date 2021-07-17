@@ -1,20 +1,13 @@
 package cn.snowflake.rose.ui;
 
-import java.io.IOException;
-
-import cn.snowflake.rose.antianticheat.NaBanMod;
+import cn.snowflake.rose.antianticheat.impl.NaBanMod;
 import org.lwjgl.input.Keyboard;
 
 import cn.snowflake.rose.utils.auth.LoginUtil;
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiMultiplayer;
-import net.minecraft.client.gui.GuiOptions;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.gui.GuiTextField;
-import net.minecraft.client.resources.I18n;
-import net.minecraft.client.settings.GameSettings;
-import scala.reflect.internal.Trees.Super;
 
 public class GuiMultiplayerLogin extends GuiMultiplayer
 {

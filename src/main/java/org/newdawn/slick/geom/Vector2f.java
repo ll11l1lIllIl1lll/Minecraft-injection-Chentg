@@ -344,7 +344,7 @@ public strictfp class Vector2f implements Serializable {
 	}
 	
 	/**
-	 * @see Object#toString()
+	 * @see java.lang.Object#toString()
 	 */
 	public String toString() {
 		return "[Vector2f "+x+","+y+" ("+length()+")]";
@@ -376,14 +376,14 @@ public strictfp class Vector2f implements Serializable {
 	}
 	
 	/**
-	 * @see Object#hashCode()
+	 * @see java.lang.Object#hashCode()
 	 */
 	public int hashCode() {
         return 997 * ((int)x) ^ 991 * ((int)y); //large primes! 
 	}
 	
 	/**
-	 * @see Object#equals(Object)
+	 * @see java.lang.Object#equals(java.lang.Object)
 	 */
 	public boolean equals(Object other) {
 		if (other instanceof Vector2f) {

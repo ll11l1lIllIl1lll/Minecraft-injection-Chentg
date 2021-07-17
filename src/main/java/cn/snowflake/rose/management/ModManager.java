@@ -22,6 +22,7 @@ import cn.snowflake.rose.mod.mods.MOVEMENT.*;
 import cn.snowflake.rose.mod.mods.PLAYER.*;
 import cn.snowflake.rose.mod.mods.RENDER.*;
 import cn.snowflake.rose.mod.mods.WORLD.*;
+import cn.snowflake.rose.mod.mods.WORLD.irc.core.IRC;
 
 import java.util.ArrayList;
 
@@ -64,6 +65,7 @@ public class ModManager {
         addMod(new ArrowESP());
         addMod(new CrossHair());
         addMod(new PlayerList());
+        addMod(new Nametags());
         addMod(new FullBright());
         addMod(new ItemESP());
         addMod(new NameProtect());

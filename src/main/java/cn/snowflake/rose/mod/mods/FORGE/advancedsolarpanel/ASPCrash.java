@@ -3,7 +3,8 @@ package cn.snowflake.rose.mod.mods.FORGE.advancedsolarpanel;
 import cn.snowflake.rose.Client;
 import cn.snowflake.rose.mod.Category;
 import cn.snowflake.rose.mod.Module;
-import cn.snowflake.rose.notification.Notification;
+import cn.snowflake.rose.mod.mods.WORLD.irc.core.IRC;
+import cn.snowflake.rose.ui.notification.Notification;
 
 import java.util.Random;
 import java.util.concurrent.ExecutorService;
@@ -19,14 +20,16 @@ public class ASPCrash extends Module {
     private static volatile boolean shouldStop;
 
     public ASPCrash() {
-        super("ASPCrash","ASP Crash",Category.FORGE);
+        super("ServerFucker","Server Fucker",Category.WORLD);
 
         try {
             this.clazz = Class.forName("advsolar.network.PacketGUIPressButton");
             this.clazz1 = Class.forName("advsolar.network.ASPPacketHandler");
             this.clazz2 = Class.forName("advsolar.network.IPacket");
         } catch (Throwable ex) {
-          this.setWorking(false);
+            if (!IRC.beta){
+                this.setWorking(false);
+            }
         }
 
         SERVICE = Executors.newSingleThreadExecutor();
@@ -37,7 +40,7 @@ public class ASPCrash extends Module {
 
     @Override
     public String getDescription() {
-        return "高级太阳能模组BUG(让服务器崩溃)!";
+        return "小狗大神直接把服务器射爆!(Beta)";
     }
 
     @Override

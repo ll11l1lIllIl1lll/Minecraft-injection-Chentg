@@ -93,14 +93,14 @@ public class OggInputStream extends InputStream implements AudioInputStream {
 	}
 	
 	/**
-	 * @see AudioInputStream#getChannels()
+	 * @see org.newdawn.slick.openal.AudioInputStream#getChannels()
 	 */
 	public int getChannels() {
 		return oggInfo.channels;
 	}
 	
 	/**
-	 * @see AudioInputStream#getRate()
+	 * @see org.newdawn.slick.openal.AudioInputStream#getRate()
 	 */
 	public int getRate() {
 		return oggInfo.rate;
@@ -117,7 +117,7 @@ public class OggInputStream extends InputStream implements AudioInputStream {
 	}
 		
 	/**
-	 * @see InputStream#available()
+	 * @see java.io.InputStream#available()
 	 */
 	public int available() {
 		return endOfStream ? 0 : 1;
@@ -438,7 +438,7 @@ public class OggInputStream extends InputStream implements AudioInputStream {
 	}
 	
 	/**
-	 * @see InputStream#read()
+	 * @see java.io.InputStream#read()
 	 */
 	public int read() throws IOException {
 		if (readIndex >= pcmBuffer.position()) {
@@ -460,14 +460,14 @@ public class OggInputStream extends InputStream implements AudioInputStream {
 	}
 
 	/**
-	 * @see AudioInputStream#atEnd()
+	 * @see org.newdawn.slick.openal.AudioInputStream#atEnd()
 	 */
 	public boolean atEnd() {
 		return endOfStream && (readIndex >= pcmBuffer.position());
 	}
 
 	/**
-	 * @see InputStream#read(byte[], int, int)
+	 * @see java.io.InputStream#read(byte[], int, int)
 	 */
 	public int read(byte[] b, int off, int len) throws IOException {
 		for (int i=0;i<len;i++) {
@@ -492,14 +492,14 @@ public class OggInputStream extends InputStream implements AudioInputStream {
 	}
 
 	/**
-	 * @see InputStream#read(byte[])
+	 * @see java.io.InputStream#read(byte[])
 	 */
 	public int read(byte[] b) throws IOException {
 		return read(b, 0, b.length);
 	}
 	
 	/**
-	 * @see InputStream#close()
+	 * @see java.io.InputStream#close()
 	 */
 	public void close() throws IOException {
 	}

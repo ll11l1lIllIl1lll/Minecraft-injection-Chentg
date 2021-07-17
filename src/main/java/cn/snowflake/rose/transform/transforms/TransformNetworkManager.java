@@ -2,6 +2,7 @@ package cn.snowflake.rose.transform.transforms;
 
 import cn.snowflake.rose.Client;
 import cn.snowflake.rose.events.impl.EventPacket;
+import cn.snowflake.rose.mod.mods.MOVEMENT.Freecam;
 import cn.snowflake.rose.utils.asm.ASMUtil;
 import com.darkmagician6.eventapi.EventManager;
 import com.darkmagician6.eventapi.types.EventType;
@@ -40,12 +41,12 @@ public class TransformNetworkManager implements Opcodes {
     public static boolean channelRead0Hook(Object packet, EventType eventType) {
         if(packet != null) {
             if (packet instanceof S05PacketSpawnPosition){
-                Client.canCancle = false;
+                Freecam.canCancle = false;
             }
             final EventPacket event = new EventPacket(eventType,packet);
             EventManager.call(event);
             if (event.getPacket() instanceof S08PacketPlayerPosLook){
-                Client.canCancle = true;
+                Freecam.canCancle = true;
             }
             return event.isCancelled();
         }

@@ -3,11 +3,9 @@ package cn.snowflake.rose.mod.mods.RENDER;
 import cn.snowflake.rose.Client;
 import cn.snowflake.rose.mod.Category;
 import cn.snowflake.rose.mod.Module;
-import cn.snowflake.rose.notification.Notification;
 import cn.snowflake.rose.ui.CSGOGUI;
 import cn.snowflake.rose.ui.window.WindowsScreen;
 import cn.snowflake.rose.utils.Value;
-import net.minecraft.client.Minecraft;
 import org.lwjgl.input.Keyboard;
 
 public class ClickGui extends Module {
@@ -19,12 +17,13 @@ public class ClickGui extends Module {
     public static Value<Boolean> info = new Value<>("ClickGui_Desc",true);
     public static Value<Boolean> export = new Value<>("ClickGui_export",true);
 
+
+
+
     public ClickGui() {
         super("ClickGui","Click Gui", Category.RENDER);
         this.setKey(Keyboard.KEY_RSHIFT);
-//        mode.addValue("Windows");
         mode.addValue("CSGO");
-		mode.addValue("Skeet");
         setChinesename("\u529f\u80fd\u7a97\u53e3");
     }
 
@@ -49,9 +48,7 @@ public class ClickGui extends Module {
             }
             mc.displayGuiScreen(clickgui);
         }
-        if(mode.isCurrentMode("Skeet")) {
-            mc.displayGuiScreen(Client.getSkeetClickGui());
-        }
+
         set(false);
     }
 

@@ -4,7 +4,7 @@ import cn.snowflake.rose.Client;
 import cn.snowflake.rose.events.impl.EventTick;
 import cn.snowflake.rose.mod.Category;
 import cn.snowflake.rose.mod.Module;
-import cn.snowflake.rose.notification.Notification;
+import cn.snowflake.rose.ui.notification.Notification;
 import cn.snowflake.rose.utils.Value;
 import cn.snowflake.rose.utils.client.ChatUtil;
 import cn.snowflake.rose.utils.mcutil.BlockPos;

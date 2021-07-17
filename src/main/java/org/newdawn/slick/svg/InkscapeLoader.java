@@ -190,8 +190,8 @@ public class InkscapeLoader implements Loader {
 	}
 
 	/**
-	 * @see Loader#loadChildren(Element,
-	 *      Transform)
+	 * @see org.newdawn.slick.svg.Loader#loadChildren(org.w3c.dom.Element,
+	 *      org.newdawn.slick.geom.Transform)
 	 */
 	public void loadChildren(Element element, Transform t)
 			throws ParsingException {

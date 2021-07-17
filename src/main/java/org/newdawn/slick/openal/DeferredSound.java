@@ -61,7 +61,7 @@ public class DeferredSound extends AudioImpl implements DeferredResource {
 	}
 	
 	/**
-	 * @see DeferredResource#load()
+	 * @see org.newdawn.slick.loading.DeferredResource#load()
 	 */
 	public void load() throws IOException {
 		boolean before = SoundStore.get().isDeferredLoading();
@@ -107,7 +107,7 @@ public class DeferredSound extends AudioImpl implements DeferredResource {
 	}
 
 	/**
-	 * @see AudioImpl#isPlaying()
+	 * @see org.newdawn.slick.openal.AudioImpl#isPlaying()
 	 */
 	public boolean isPlaying() {
 		checkTarget();
@@ -116,7 +116,7 @@ public class DeferredSound extends AudioImpl implements DeferredResource {
 	}
 
 	/**
-	 * @see AudioImpl#playAsMusic(float, float, boolean)
+	 * @see org.newdawn.slick.openal.AudioImpl#playAsMusic(float, float, boolean)
 	 */
 	public int playAsMusic(float pitch, float gain, boolean loop) {
 		checkTarget();
@@ -124,7 +124,7 @@ public class DeferredSound extends AudioImpl implements DeferredResource {
 	}
 
 	/**
-	 * @see AudioImpl#playAsSoundEffect(float, float, boolean)
+	 * @see org.newdawn.slick.openal.AudioImpl#playAsSoundEffect(float, float, boolean)
 	 */
 	public int playAsSoundEffect(float pitch, float gain, boolean loop) {
 		checkTarget();
@@ -147,7 +147,7 @@ public class DeferredSound extends AudioImpl implements DeferredResource {
 	}
 	
 	/**
-	 * @see AudioImpl#stop()
+	 * @see org.newdawn.slick.openal.AudioImpl#stop()
 	 */
 	public void stop() {
 		checkTarget();
@@ -155,7 +155,7 @@ public class DeferredSound extends AudioImpl implements DeferredResource {
 	}
 
 	/**
-	 * @see DeferredResource#getDescription()
+	 * @see org.newdawn.slick.loading.DeferredResource#getDescription()
 	 */
 	public String getDescription() {
 		return ref;

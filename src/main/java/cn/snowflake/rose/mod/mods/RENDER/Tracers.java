@@ -25,7 +25,7 @@ public class Tracers extends Module {
     @EventTarget
     public void On3D(EventRender3D e) {
     	try{
-        GL11.glPushMatrix();
+        	GL11.glPushMatrix();
 			GL11.glEnable(GL11.GL_LINE_SMOOTH);
 			GL11.glDisable(GL11.GL_DEPTH_TEST);
 			GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);

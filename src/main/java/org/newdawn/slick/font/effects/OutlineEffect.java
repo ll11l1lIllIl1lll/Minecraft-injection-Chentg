@@ -46,7 +46,7 @@ public class OutlineEffect implements ConfigurableEffect {
 	}
 
 	/**
-	 * @see Effect#draw(BufferedImage, Graphics2D, UnicodeFont, Glyph)
+	 * @see org.newdawn.slick.font.effects.Effect#draw(java.awt.image.BufferedImage, java.awt.Graphics2D, org.newdawn.slick.UnicodeFont, org.newdawn.slick.font.Glyph)
 	 */
 	public void draw(BufferedImage image, Graphics2D g, UnicodeFont unicodeFont, Glyph glyph) {
 		g = (Graphics2D)g.create();
@@ -139,14 +139,14 @@ public class OutlineEffect implements ConfigurableEffect {
 	}
 
 	/**
-	 * @see Object#toString()
+	 * @see java.lang.Object#toString()
 	 */
 	public String toString () {
 		return "Outline";
 	}
 
 	/**
-	 * @see ConfigurableEffect#getValues()
+	 * @see org.newdawn.slick.font.effects.ConfigurableEffect#getValues()
 	 */
 	public List getValues () {
 		List values = new ArrayList();
@@ -161,7 +161,7 @@ public class OutlineEffect implements ConfigurableEffect {
 	}
 
 	/**
-	 * @see ConfigurableEffect#setValues(List)
+	 * @see org.newdawn.slick.font.effects.ConfigurableEffect#setValues(java.util.List)
 	 */
 	public void setValues (List values) {
 		for (Iterator iter = values.iterator(); iter.hasNext();) {

@@ -1068,7 +1068,7 @@ public class Input {
 	 */
 	private class NullOutputStream extends OutputStream {
 		/**
-		 * @see OutputStream#write(int)
+		 * @see java.io.OutputStream#write(int)
 		 */
 		public void write(int b) throws IOException {
 			// null implemetnation

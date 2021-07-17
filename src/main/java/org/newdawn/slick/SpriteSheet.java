@@ -167,7 +167,7 @@ public class SpriteSheet extends Image {
 	}
 	
 	/**
-	 * @see Image#initImpl()
+	 * @see org.newdawn.slick.Image#initImpl()
 	 */
 	protected void initImpl() {
 		if (subImages != null) {
@@ -269,7 +269,7 @@ public class SpriteSheet extends Image {
 	}
 
 	/**
-	 * @see Image#endUse()
+	 * @see org.newdawn.slick.Image#endUse()
 	 */
 	public void endUse() {
 		if (target == this) {
@@ -280,7 +280,7 @@ public class SpriteSheet extends Image {
 	}
 
 	/**
-	 * @see Image#startUse()
+	 * @see org.newdawn.slick.Image#startUse()
 	 */
 	public void startUse() {
 		if (target == this) {
@@ -291,7 +291,7 @@ public class SpriteSheet extends Image {
 	}
 	
 	/**
-	 * @see Image#setTexture(Texture)
+	 * @see org.newdawn.slick.Image#setTexture(org.newdawn.slick.opengl.Texture)
 	 */
 	public void setTexture(Texture texture) {
 		if (target == this) {

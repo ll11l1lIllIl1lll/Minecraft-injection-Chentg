@@ -57,7 +57,7 @@ public class MannTriangulator implements Triangulator {
 	}
 	
 	/**
-	 * @see Triangulator#addPolyPoint(float, float)
+	 * @see org.newdawn.slick.geom.Triangulator#addPolyPoint(float, float)
 	 */
 	public void addPolyPoint(float x, float y) {
     	addPoint(new Vector2f(x,y));
@@ -599,14 +599,14 @@ public class MannTriangulator implements Triangulator {
 	}
 
 	/**
-	 * @see Triangulator#getTriangleCount()
+	 * @see org.newdawn.slick.geom.Triangulator#getTriangleCount()
 	 */
 	public int getTriangleCount() {
 		return triangles.size() / 3;
 	}
 
 	/**
-	 * @see Triangulator#getTrianglePoint(int, int)
+	 * @see org.newdawn.slick.geom.Triangulator#getTrianglePoint(int, int)
 	 */
 	public float[] getTrianglePoint(int tri, int i) {
 		Vector2f pt = (Vector2f) triangles.get((tri * 3) + i);

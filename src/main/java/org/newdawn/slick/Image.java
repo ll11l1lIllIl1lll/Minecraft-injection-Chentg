@@ -1289,7 +1289,7 @@ public class Image implements Renderable {
 	}
 	
 	/**
-	 * @see Object#toString()
+	 * @see java.lang.Object#toString()
 	 */
 	public String toString() {
 		init();

@@ -553,7 +553,7 @@ public class AStarPathFinder implements PathFinder, PathFindingContext {
 		}
 		
 		/**
-		 * @see Object#toString()
+		 * @see java.lang.Object#toString()
 		 */
 		public String toString() {
 			return "[Node "+x+","+y+"]";
@@ -561,28 +561,28 @@ public class AStarPathFinder implements PathFinder, PathFindingContext {
 	}
 
 	/**
-	 * @see PathFindingContext#getMover()
+	 * @see org.newdawn.slick.util.pathfinding.PathFindingContext#getMover()
 	 */
 	public Mover getMover() {
 		return mover;
 	}
 
 	/**
-	 * @see PathFindingContext#getSearchDistance()
+	 * @see org.newdawn.slick.util.pathfinding.PathFindingContext#getSearchDistance()
 	 */
 	public int getSearchDistance() {
 		return distance;
 	}
 
 	/**
-	 * @see PathFindingContext#getSourceX()
+	 * @see org.newdawn.slick.util.pathfinding.PathFindingContext#getSourceX()
 	 */
 	public int getSourceX() {
 		return sourceX;
 	}
 
 	/**
-	 * @see PathFindingContext#getSourceY()
+	 * @see org.newdawn.slick.util.pathfinding.PathFindingContext#getSourceY()
 	 */
 	public int getSourceY() {
 		return sourceY;

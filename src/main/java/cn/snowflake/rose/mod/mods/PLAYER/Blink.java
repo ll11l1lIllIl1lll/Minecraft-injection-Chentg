@@ -4,6 +4,7 @@ import cn.snowflake.rose.Client;
 import cn.snowflake.rose.events.impl.EventPacket;
 import cn.snowflake.rose.mod.Category;
 import cn.snowflake.rose.mod.Module;
+import cn.snowflake.rose.mod.mods.MOVEMENT.Freecam;
 import cn.snowflake.rose.utils.client.PlayerUtil;
 import cn.snowflake.rose.utils.time.TimeHelper;
 import com.darkmagician6.eventapi.EventTarget;
@@ -77,7 +78,7 @@ public class Blink extends Module {
                 event.setCancelled(true);
             }
         }else if (event.getType() == EventType.RECIEVE){
-            if (event.getPacket() instanceof S08PacketPlayerPosLook && Client.canCancle) {
+            if (event.getPacket() instanceof S08PacketPlayerPosLook && Freecam.canCancle) {
                 event.setCancelled(true);
             }
         }

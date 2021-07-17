@@ -163,7 +163,7 @@ public class Ellipse extends Shape {
     }
 
     /**
-     * @see Shape#transform(Transform)
+     * @see org.newdawn.slick.geom.Shape#transform(org.newdawn.slick.geom.Transform)
      */
     public Shape transform(Transform transform) {
         checkPoints();
@@ -179,7 +179,7 @@ public class Ellipse extends Shape {
     }
 
     /**
-     * @see Shape#findCenter()
+     * @see org.newdawn.slick.geom.Shape#findCenter()
      */
     protected void findCenter() {
         center = new float[2];
@@ -188,7 +188,7 @@ public class Ellipse extends Shape {
     }
 
     /**
-     * @see Shape#calculateRadius()
+     * @see org.newdawn.slick.geom.Shape#calculateRadius()
      */
     protected void calculateRadius() {
         boundingCircleRadius = (radius1 > radius2) ? radius1 : radius2;

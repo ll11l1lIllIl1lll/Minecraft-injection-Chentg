@@ -56,42 +56,42 @@ public class ImageBuffer implements ImageData {
 	}
 	
 	/**
-	 * @see ImageData#getDepth()
+	 * @see org.newdawn.slick.opengl.ImageData#getDepth()
 	 */
 	public int getDepth() {
 		return 32;
 	}
 
 	/**
-	 * @see ImageData#getHeight()
+	 * @see org.newdawn.slick.opengl.ImageData#getHeight()
 	 */
 	public int getHeight() {
 		return height;
 	}
 
 	/**
-	 * @see ImageData#getTexHeight()
+	 * @see org.newdawn.slick.opengl.ImageData#getTexHeight()
 	 */
 	public int getTexHeight() {
 		return texHeight;
 	}
 
 	/**
-	 * @see ImageData#getTexWidth()
+	 * @see org.newdawn.slick.opengl.ImageData#getTexWidth()
 	 */
 	public int getTexWidth() {
 		return texWidth;
 	}
 
 	/**
-	 * @see ImageData#getWidth()
+	 * @see org.newdawn.slick.opengl.ImageData#getWidth()
 	 */
 	public int getWidth() {
 		return width;
 	}
 
 	/**
-	 * @see ImageData#getImageBufferData()
+	 * @see org.newdawn.slick.opengl.ImageData#getImageBufferData()
 	 */
 	public ByteBuffer getImageBufferData() {
 		ByteBuffer scratch = BufferUtils.createByteBuffer(rawData.length);

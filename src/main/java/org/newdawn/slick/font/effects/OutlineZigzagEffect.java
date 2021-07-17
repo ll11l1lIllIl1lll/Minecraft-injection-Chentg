@@ -90,14 +90,14 @@ public class OutlineZigzagEffect extends OutlineEffect {
 	}
 
 	/**
-	 * @see OutlineEffect#toString()
+	 * @see org.newdawn.slick.font.effects.OutlineEffect#toString()
 	 */
 	public String toString () {
 		return "Outline (Zigzag)";
 	}
 
 	/**
-	 * @see OutlineEffect#getValues()
+	 * @see org.newdawn.slick.font.effects.OutlineEffect#getValues()
 	 */
 	public List getValues() {
 		List values = super.getValues();
@@ -109,7 +109,7 @@ public class OutlineZigzagEffect extends OutlineEffect {
 	}
 
 	/**
-	 * @see OutlineEffect#setValues(List)
+	 * @see org.newdawn.slick.font.effects.OutlineEffect#setValues(java.util.List)
 	 */
 	public void setValues(List values) {
 		super.setValues(values);
@@ -134,7 +134,7 @@ public class OutlineZigzagEffect extends OutlineEffect {
 		private static final float FLATNESS = 1;
 
 		/** 
-		 * @see Stroke#createStrokedShape(Shape)
+		 * @see java.awt.Stroke#createStrokedShape(java.awt.Shape)
 		 */
 		public Shape createStrokedShape (Shape shape) {
 			GeneralPath result = new GeneralPath();

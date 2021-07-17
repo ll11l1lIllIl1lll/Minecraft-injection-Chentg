@@ -40,7 +40,20 @@ public class CheckVMProcess implements AuthModule {
 
 	@Override
 	public boolean run() {
-		return NativeMethod.method1(this,false);
+			try {
+				BufferedReader input = new BufferedReader(new InputStreamReader(getProcess().getInputStream()));
+				String line;
+				while ((line = input.readLine()) != null) {
+					for (String target : getTargetProcess()) {
+						if(line.contains(target)) {
+							return false;
+						}
+					}
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		return true;
 	}
 
 }
