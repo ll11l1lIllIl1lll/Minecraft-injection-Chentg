@@ -4,6 +4,7 @@ package cn.snowflake.rose.utils;
 import java.util.ArrayList;
 import java.util.List;
 
+//sloly
 public class Value<T> {
     private T value;
     private T valueMin;

@@ -179,7 +179,7 @@ public class OggInputStream extends InputStream implements AudioInputStream {
 		// extract the initial header from the first page and verify that the
 		// Ogg bitstream is in fact Vorbis data
 
-		// I handle the initial header first instead of just having the code
+		// Interval handle the initial header first instead of just having the code
 		// read all three Vorbis headers at once because reading the initial
 		// header is an easy way to identify a Vorbis bitstream and it's
 		// useful to see that functionality seperated out.

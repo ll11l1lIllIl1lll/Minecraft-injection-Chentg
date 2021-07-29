@@ -13,6 +13,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.net.URL;
 
+//https://github.com/zortax/MinecraftInjectionAPI/blob/master/src/main/java/de/zortax/injection/injector/McAgent.java
 public class Agent {
 	public static Instrumentation instrumentation;
 	public static String args;
@@ -21,16 +22,8 @@ public class Agent {
 	public static void agentmain(String args, Instrumentation instrumentation) {
 		try {
 			Agent.args = args;
-			if (!args.contains("--injection=chentg")){
-				JOptionPane.showMessageDialog(null,"\u68c0\u6d4b\u5230\u6838\u5fc3\u88ab\u4fee\u6539\u0020\u0021");
-			}
-			if (args.contains("--chinese=true")){
-				Client.chinese = true;
-			}
 			Agent.instrumentation = instrumentation;
-//			if (!args.contains("--debug=true")){
-				Agent.loadThisJar();
-//			}
+			Agent.loadThisJar();
 			Agent.forceloadclass();
 			Agent.retransform();
 		}catch (Exception e) {
@@ -81,8 +74,6 @@ public class Agent {
 		}
 		return null;
 	}
-
-
 
 	public static void addToMinecraftClassLoader(Class<?> ... classes) {
 		for (Class c : instrumentation.getAllLoadedClasses()) {

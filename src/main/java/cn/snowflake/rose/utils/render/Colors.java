@@ -1,7 +1,7 @@
 package cn.snowflake.rose.utils.render;
 
 import java.awt.Color;
-
+// slowly
 public enum Colors {
     BLACK(-16711423),
     BLUE(-12028161),

@@ -22,6 +22,7 @@ import net.minecraft.nbt.NBTTagCompound;
 
 import org.apache.commons.codec.digest.DigestUtils;
 
+// ehacks
 public class Rand {
     private final TileEntity[] tiles = {new TileEntityPiston(), new TileEntityNote(), new TileEntityMobSpawner(), new TileEntityCommandBlock(), new TileEntityBeacon()};
     private final Entity[] entityes = {new EntityBlaze(null), new EntityCreeper(null), new EntityGhast(null), new EntitySlime(null), new EntitySpider(null)};

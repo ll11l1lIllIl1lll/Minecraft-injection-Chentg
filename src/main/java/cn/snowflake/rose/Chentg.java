@@ -1,14 +1,6 @@
 package cn.snowflake.rose;
 
-import cn.snowflake.rose.management.CommandManager;
-import cn.snowflake.rose.management.FileManager;
-import cn.snowflake.rose.management.FontManager;
-import cn.snowflake.rose.management.ModManager;
-import cn.snowflake.rose.mod.mods.WORLD.irc.core.IRC;
-import io.netty.util.internal.ConcurrentSet;
 
-
-import java.lang.reflect.Field;
 
 public class Chentg {
     public static boolean isAuthed = false;

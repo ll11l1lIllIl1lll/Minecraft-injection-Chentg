@@ -244,7 +244,7 @@ public class InternalTextureLoader {
 	    	}
         }
         
-        // horrible test until I can find something more suitable
+        // horrible test until Interval can find something more suitable
         try {
         	GL.glGetError();
         } catch (NullPointerException e) {

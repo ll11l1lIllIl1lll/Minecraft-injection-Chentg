@@ -3,7 +3,7 @@ package cn.snowflake.rose.utils.path;
 import cn.snowflake.rose.utils.mcutil.BlockPos;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
-
+// slowly
 public class AStarUtil {
     protected Minecraft mc = Minecraft.getMinecraft();
 

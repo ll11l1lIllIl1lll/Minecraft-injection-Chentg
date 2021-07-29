@@ -1,6 +1,7 @@
 package cn.snowflake.rose.ui;
 
 import cn.snowflake.rose.antianticheat.impl.NaBanMod;
+import net.minecraft.util.StringUtils;
 import org.lwjgl.input.Keyboard;
 
 import cn.snowflake.rose.utils.auth.LoginUtil;
@@ -8,7 +9,13 @@ import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiMultiplayer;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.gui.GuiTextField;
-
+/**
+ *
+ * @author SuChen
+ *
+ * Time : 2021.02.10
+ *
+ */
 public class GuiMultiplayerLogin extends GuiMultiplayer
 {
     
@@ -23,7 +30,9 @@ public class GuiMultiplayerLogin extends GuiMultiplayer
         this.username.setFocused(true);
         this.buttonList.add(new GuiButton(300, 85, 10, 60, 20, "Login"));
         this.buttonList.add(new GuiButton(400, 155, 10, 60, 20, "UpdateID"));
-        NaBanMod.cpuID = new StringBuilder().insert(0,NaBanMod.getCpuID()).append(NaBanMod.getSerialNumber()).toString();
+        if (StringUtils.isNullOrEmpty(NaBanMod.cpuID)){
+            NaBanMod.cpuID = new StringBuilder().insert(0,NaBanMod.getCpuID()).append(NaBanMod.getSerialNumber()).toString();
+        }
     }
     
     @Override

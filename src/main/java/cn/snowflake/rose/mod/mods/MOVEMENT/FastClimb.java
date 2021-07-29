@@ -19,6 +19,7 @@ public class FastClimb extends Module {
         return "快速攀爬!";
     }
 
+    // shit code
     @EventTarget
     public void isclimb(EventUpdate eventUpdate){
         if (mc.thePlayer.isOnLadder() && mc.gameSettings.keyBindForward.getIsKeyPressed()){

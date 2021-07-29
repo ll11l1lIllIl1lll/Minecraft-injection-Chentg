@@ -14,7 +14,7 @@ public class ScreamTracker3 {
 		0x01, /* F: Portamento Up.*/
 		0x03, /* G: Tone Portamento.*/
 		0x04, /* H: Vibrato.*/
-		0x1D, /* I: Tremor.*/
+		0x1D, /* Interval: Tremor.*/
 		0x00, /* J: Arpeggio.*/
 		0x06, /* K: Vibrato + Volume Slide.*/
 		0x05, /* L: Tone Portamento + Volume Slide.*/

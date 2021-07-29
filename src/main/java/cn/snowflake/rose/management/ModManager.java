@@ -22,7 +22,6 @@ import cn.snowflake.rose.mod.mods.MOVEMENT.*;
 import cn.snowflake.rose.mod.mods.PLAYER.*;
 import cn.snowflake.rose.mod.mods.RENDER.*;
 import cn.snowflake.rose.mod.mods.WORLD.*;
-import cn.snowflake.rose.mod.mods.WORLD.irc.core.IRC;
 
 import java.util.ArrayList;
 
@@ -31,15 +30,14 @@ public class ModManager {
 
     public ModManager() {
         //COMBAT
+        addMod(new Aimbot());
         addMod(new Aura());
         addMod(new Regen());
         addMod(new NoRecoil());
         addMod(new Criticals());
         addMod(new FastBow());
         addMod(new AntiAim());
-//        addMod(new Aimbot2());
         addMod(new TPAura());
-        addMod(new Aimbot());
         addMod(new Velocity());
         addMod(new AutoFish());
         addMod(new Blink());
@@ -49,11 +47,10 @@ public class ModManager {
         addMod(new Fly());
         addMod(new VClipDown());
         addMod(new VClipUP());
-//        addMod(new VehicleSpeed());
         addMod(new FastClimb());
         addMod(new Scaffold());
         addMod(new Speed());
-        addMod(new TargetStrafe());
+//        addMod(new TargetStrafe());
         addMod(new NoFall());
         addMod(new Jesus());
         addMod(new Step());
@@ -102,13 +99,15 @@ public class ModManager {
         addMod(new Spammer());
         addMod(new MCF());
         addMod(new FakeLag());
-        addMod(new IRC());
         addMod(new NoCommand());
         addMod(new Plugins());
 
         //FORGE
         addMod(new ScreenProtect());
         addMod(new SecretClose());
+        addMod(new BreakInGui());
+        addMod(new FakeCreative());
+
         addMod(new AntiBackpack());
         //AE2
         addMod(new CellViewer());
@@ -130,8 +129,6 @@ public class ModManager {
         addMod(new MagicRecipe());
         addMod(new EIOXpGrab());
         addMod(new OneWayTicket());
-        addMod(new BreakInGui());
-        addMod(new FakeCreative());
         addMod(new FTBSatchelDupe());
 
         //MRF

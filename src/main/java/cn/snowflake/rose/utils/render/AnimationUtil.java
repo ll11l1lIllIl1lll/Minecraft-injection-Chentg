@@ -1,5 +1,6 @@
 package cn.snowflake.rose.utils.render;
 
+// slowly
 public class AnimationUtil {
     private static float defaultSpeed = 0.125f;
     public static float calculateCompensation(float target, float current, long delta, int speed) {

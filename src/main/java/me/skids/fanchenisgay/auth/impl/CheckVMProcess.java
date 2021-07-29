@@ -1,7 +1,6 @@
-package me.skids.margeleisgay.auth.impl;
+package me.skids.fanchenisgay.auth.impl;
 
-import cn.snowflake.rose.NativeMethod;
-import me.skids.margeleisgay.auth.AuthModule;
+import me.skids.fanchenisgay.auth.AuthModule;
 
 import java.io.BufferedReader;
 import java.io.IOException;

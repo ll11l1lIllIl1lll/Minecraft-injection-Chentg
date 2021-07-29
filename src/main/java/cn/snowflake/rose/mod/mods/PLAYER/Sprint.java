@@ -13,7 +13,6 @@ public class Sprint extends Module {
     public Sprint() {
         super("Sprint","Sprint", Category.MOVEMENT);
         this.mode.addValue("Single");
-        this.mode.addValue("AllDirection");
         setChinesename("\u5f3a\u5236\u75be\u8dd1");
     }
     @Override
@@ -23,9 +22,7 @@ public class Sprint extends Module {
     @EventTarget
     public void onUpdate(EventUpdate e){
         boolean canSprint = mc.thePlayer.getFoodStats().getFoodLevel() > 6.0F || mc.thePlayer.capabilities.allowFlying;
-        if (this.mode.isCurrentMode("AllDirection")  && PlayerUtil.isMoving()  && canSprint) {
-            mc.thePlayer.setSprinting(true);
-        }
+
         if (this.mode.isCurrentMode("Single")) {
             if (mc.thePlayer.moveForward > 0.0F && PlayerUtil.isMoving() && canSprint) {
                 mc.thePlayer.setSprinting(true);

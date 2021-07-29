@@ -18,10 +18,7 @@ import java.util.stream.Stream;
 import static org.objectweb.asm.ClassWriter.COMPUTE_FRAMES;
 import static org.objectweb.asm.ClassWriter.COMPUTE_MAXS;
 
-/**
- * Author Seth
- * 4/4/2019 @ 11:22 PM.
- */
+
 public final class ASMUtil {
 
     public static MethodInsnNode newInstance(final int opcode, final String owner,final String name, final String desc){

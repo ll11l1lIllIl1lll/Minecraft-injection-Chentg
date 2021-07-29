@@ -10,6 +10,7 @@ import net.minecraft.util.ChatComponentText;
 
 import java.util.Objects;
 
+// 
 public class CommandTP extends Command {
     public CommandTP(String[] command) {
         super(command);

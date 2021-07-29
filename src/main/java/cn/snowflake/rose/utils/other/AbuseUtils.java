@@ -4,6 +4,9 @@ package cn.snowflake.rose.utils.other;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+
+
+
 public class AbuseUtils {
 
     public static String abuse = "\u5783\u573e\u72d7\u65cf\u5e9f\u6750\u7239\u7239\u6211\u4e0d\u60f3\u57cb\u6c70\u4f60\u4eec\u4e86\r\n" +

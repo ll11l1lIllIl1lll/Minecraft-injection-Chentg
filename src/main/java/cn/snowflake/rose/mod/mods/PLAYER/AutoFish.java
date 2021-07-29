@@ -6,7 +6,7 @@ import cn.snowflake.rose.mod.Module;
 import com.darkmagician6.eventapi.EventTarget;
 import net.minecraft.network.play.server.S29PacketSoundEffect;
 
-
+//ehacks
 public class AutoFish extends Module {
     public AutoFish() {
         super("AutoFish","Auto Fish", Category.PLAYER);

@@ -44,22 +44,6 @@ public class PathUtils {
         return positions;
     }
 
-    public static List<Vector3d> findPath(final double tpX, final double tpY, final double tpZ, final double offset) {
-        final List<Vector3d> positions = new ArrayList<>();
-        final float yaw = (float) ((Math.atan2(tpZ - Minecraft.getMinecraft().thePlayer.posZ, tpX - Minecraft.getMinecraft().thePlayer.posX) * 180.0 / Math.PI) - 90F);
-        final double steps = getDistance(Minecraft.getMinecraft().thePlayer.posX, Minecraft.getMinecraft().thePlayer.posY, Minecraft.getMinecraft().thePlayer.posZ, tpX, tpY, tpZ) / offset;
-
-        double curY = Minecraft.getMinecraft().thePlayer.posY;
-
-        for(double d = offset; d < getDistance(Minecraft.getMinecraft().thePlayer.posX, Minecraft.getMinecraft().thePlayer.posY, Minecraft.getMinecraft().thePlayer.posZ, tpX, tpY, tpZ); d += offset) {
-            curY -= (Minecraft.getMinecraft().thePlayer.posY - tpY) / steps;
-            positions.add(new Vector3d(Minecraft.getMinecraft().thePlayer.posX - (Math.sin(Math.toRadians(yaw)) * d), curY, Minecraft.getMinecraft().thePlayer.posZ + Math.cos(Math.toRadians(yaw)) * d));
-        }
-
-        positions.add(new Vector3d(tpX, tpY, tpZ));
-
-        return positions;
-    }
 
     private static double getDistance(final double x1, final double y1, final double z1, final double x2, final double y2, final double z2) {
         final double xDiff = x1 - x2;

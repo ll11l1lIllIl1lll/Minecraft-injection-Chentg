@@ -7,6 +7,7 @@ import com.darkmagician6.eventapi.EventTarget;
 import net.minecraft.network.play.client.C03PacketPlayer;
 import net.minecraft.potion.Potion;
 
+//ehack
 public class AntiEffect extends Module {
     public AntiEffect() {
         super("AntiEffect", "Anti Effect", Category.PLAYER);

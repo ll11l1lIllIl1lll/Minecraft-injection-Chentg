@@ -41,10 +41,12 @@ import java.util.*;
 
 public class Aimbot extends Module {
 
-    public static Value<Double> index = new Value<Double>("Aimbot_pitchIndex", 1.0, -0.01, 1.0, 0.01);
-    public static Value<Double> predict = new Value<Double>("Aimbot_Predict", 8.0, 0.0, 15.0, 1);
+    public static Value<Double> pitchSize = new Value<Double>("Aimbot_pitchSize", 1.0, -0.01, 1.0, 0.01);
+    public static Value<Double> yawSize = new Value<Double>("Aimbot_yawSize", 0.0, -2d, 2.0, 0.01);
 
-    public static Value<Double> range = new Value<Double>("Aimbot_Reach", 10.5D, 3.0D, 200.0D,0.1D);
+    public static Value<Double> predict = new Value<Double>("Aimbot_Predict", 6.0, 0.0, 15.0, 1);
+
+    public static Value<Double> range = new Value<>("Aimbot_Reach", 10.5D, 3.0D, 200.0D,0.1D);
 
     public Value<Double> fov = new Value<Double>("Aimbot_Fov", 10.0, 1.0, 180.0, 1.0);
     public Value<Boolean> throughwall = new Value<Boolean>("Aimbot_ThroughWall", false);
@@ -55,8 +57,8 @@ public class Aimbot extends Module {
     public Value<Boolean> moster = new Value<Boolean>("Aimbot_Mob", false);
     public Value<Boolean> village = new Value<Boolean>("Aimbot_village", false);
     public Value<Boolean> invisible = new Value<Boolean>("Aimbot_Invisible", false);
-    public Value<Boolean> silent = new Value<Boolean>("Aimbot_Silent", false);
-    public Value<Boolean> targetinfo = new Value<Boolean>("Aimbot_TargetInfo", false);
+    public Value<Boolean> silent = new Value<Boolean>("Aimbot_Silent", true);
+    public Value<Boolean> targetinfo = new Value<Boolean>("Aimbot_TargetInfo", true);
     public Value<Boolean> circle = new Value<Boolean>("Aimbot_Circle", false);
     public double targetspeed;
 
@@ -156,13 +158,16 @@ public class Aimbot extends Module {
 
     @EventTarget
     public void onTick(EventMotion eventMotion){
-        if (eventMotion.isPre()) {
-           target = getTarget().get(0);
+//        if (eventMotion.isPre()) {   // remove slient
+            ArrayList<EntityLivingBase> targets = (ArrayList<EntityLivingBase>) getTarget();
+            target = targets.get(0);
+
             addTarget();
+
             if (target != null) {
                 Entity ey = null;
                 if (target instanceof EntityPlayer) {
-                    ey = this.predict(((EntityPlayer) target), predictmode.isCurrentMode("Auto") ? (int) (getResponseTime(mc.thePlayer.getUniqueID())) :  predict.getValueState().intValue());
+                    ey = this.predict(((EntityPlayer) target), predictmode.isCurrentMode("Auto") ? (int) (getResponseTime(mc.thePlayer.getUniqueID())) : predict.getValueState().intValue());
                 } else {
                     ey = target;
                 }
@@ -171,29 +176,29 @@ public class Aimbot extends Module {
                     if (roundToPlace(ey.boundingBox.maxY - ey.boundingBox.minY, 2) == 0.6) {//lying
                         rotY = ey.boundingBox.minY + 0.15;
                     } else if (roundToPlace(ey.boundingBox.maxY - ey.boundingBox.minY, 2) == 1.3) {//squatting
-                        rotY = ey.boundingBox.minY + 0.65 + index.getValueState();
+                        rotY = ey.boundingBox.minY + 0.65 + pitchSize.getValueState();
                     } else if (roundToPlace(ey.boundingBox.maxY - ey.boundingBox.minY, 2) == 1.8) {//standing
-                        rotY = ey.boundingBox.minY + 0.85 + index.getValueState();
+                        rotY = ey.boundingBox.minY + 0.85 + pitchSize.getValueState();
                     }
                 } else {
-                    rotY = ey.posY + ey.getEyeHeight() - index.getValueState();
+                    rotY = ey.posY + ey.getEyeHeight() - pitchSize.getValueState();
                 }
                 double X = Math.abs(target.motionX);
                 double Z = Math.abs(target.motionZ);
                 targetspeed = X + Z;
                 float[] rotations = RotationUtil.getPlayerRotations(mc.thePlayer, ey.posX, rotY, ey.posZ);
+
                 if (shouldAim() && canTarget(target)) {
-                    if (!silent.getValueState()){
-                        Minecraft.getMinecraft().thePlayer.rotationYaw = rotations[0];
+                    if (!silent.getValueState()) {
+                        Minecraft.getMinecraft().thePlayer.rotationYaw = rotations[0] + yawSize.getValueState().floatValue() * 10;
                         Minecraft.getMinecraft().thePlayer.rotationPitch = rotations[1];
-                    }else{
-                        eventMotion.setYaw(rotations[0]);
+                    } else {
+                        eventMotion.setYaw(rotations[0] + yawSize.getValueState().floatValue() * 10);
                         eventMotion.setPitch(rotations[1]);
                     }
                 }
             }
-
-        }
+//        }
     }
 
 
@@ -268,7 +273,7 @@ public class Aimbot extends Module {
             if (Objects.requireNonNull(JReflectUtility.getEntityNumber()).isInstance(entity)){
                 return false;
             }
-        }       
+        }
         if (Client.deci){
             if (Objects.requireNonNull(JReflectUtility.getCorpse()).isInstance(entity)){
                 return false;
@@ -316,14 +321,19 @@ public class Aimbot extends Module {
 
     private List<EntityLivingBase> getTarget() {
         List<EntityLivingBase> loaded = new ArrayList<EntityLivingBase>();
-        mc.theWorld.loadedEntityList.stream()
-                .filter(f -> f instanceof EntityLivingBase)
-                .filter(f -> !(f instanceof EntityPlayerSP))
-                .filter(f -> canTarget((EntityLivingBase) f))
-                .filter(f -> mc.thePlayer.getDistanceToEntity((Entity) f) <= range.getValueState())
-                .forEach(ent -> {
-        	loaded.add((EntityLivingBase)ent);
-        });
+
+        for (Object ent : Minecraft.getMinecraft().theWorld.loadedEntityList){
+            if (ent instanceof EntityLivingBase){
+                if (!(ent instanceof EntityPlayerSP)){
+                    if (canTarget((EntityLivingBase) ent)){
+                        if (mc.thePlayer.getDistanceToEntity((Entity) ent) <= range.getValueState()){
+                            loaded.add((EntityLivingBase)ent);
+                        }
+                    }
+                }
+            }
+        }
+
         if (sortingMode.isCurrentMode("Distance")) {
             loaded.sort((o1, o2) ->
                     (int) (o1.getDistanceToEntity(mc.thePlayer) - o2.getDistanceToEntity(mc.thePlayer))

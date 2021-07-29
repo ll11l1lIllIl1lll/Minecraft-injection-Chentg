@@ -6,10 +6,6 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
-/**
- * @Auther: SnowFlake
- * @Date: 2021/7/17 17:39
- */
 public class GLUtil {
 
     private static final Map<Integer, Boolean> glCapMap = new HashMap();

@@ -1,4 +1,4 @@
-package me.skids.margeleisgay.auth;
+package me.skids.fanchenisgay.auth;
 
 public interface AuthModule {
 	 void onEnable();

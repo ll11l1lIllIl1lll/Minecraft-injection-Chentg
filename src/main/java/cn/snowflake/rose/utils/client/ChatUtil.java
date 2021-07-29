@@ -9,7 +9,6 @@ public class ChatUtil {
     public static void sendClientMessage(String string) {
         if (mc.thePlayer != null && mc.theWorld !=null) {
 //            Minecraft.getMinecraft().thePlayer.addChatComponentMessage(new ChatComponentText("\u00a7b[Season] " + "\u00a7e" + string));
-
             Minecraft.getMinecraft().thePlayer.addChatComponentMessage(new ChatComponentText("\u00a7b[Chentg] " + "\u00a7e" + string));
         }
     }

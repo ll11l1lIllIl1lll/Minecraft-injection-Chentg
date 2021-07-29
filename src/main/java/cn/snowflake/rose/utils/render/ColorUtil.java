@@ -8,7 +8,5 @@ public class ColorUtil {
     public static Color getClickGUIColor() {
         return new Color((int)ClickGui.r.getValueState().doubleValue(), (int)ClickGui.g.getValueState().doubleValue(), (int)ClickGui.b.getValueState().doubleValue());
     }
-    public static Color getClickGUIColora() {
-        return new Color((int) ClickGui.r.getValueState().doubleValue(), (int)ClickGui.g.getValueState().doubleValue(), (int)ClickGui.b.getValueState().doubleValue(),240);
-    }
+
 }

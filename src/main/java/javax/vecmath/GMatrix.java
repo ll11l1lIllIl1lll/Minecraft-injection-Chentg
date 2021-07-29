@@ -378,7 +378,7 @@ public class GMatrix implements java.io.Serializable, Cloneable {
 
     /**
      * Subtracts this matrix from the identity matrix and puts the values
-     * back into this (this = I - this).
+     * back into this (this = Interval - this).
      */
     public final void identityMinus()
     {

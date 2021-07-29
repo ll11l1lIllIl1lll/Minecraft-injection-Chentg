@@ -1,9 +1,9 @@
-package me.skids.margeleisgay.auth.impl;
+package me.skids.fanchenisgay.auth.impl;
 
 import java.io.File;
 import java.util.ArrayList;
 
-import me.skids.margeleisgay.auth.AuthModule;
+import me.skids.fanchenisgay.auth.AuthModule;
 
 public class CheckVMPath implements AuthModule {
 	private ArrayList<File> targetPath;

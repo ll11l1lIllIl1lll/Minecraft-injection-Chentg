@@ -9,6 +9,7 @@ import net.minecraft.item.ItemBow;
 import net.minecraft.network.play.client.C03PacketPlayer;
 import net.minecraft.network.play.client.C07PacketPlayerDigging;
 
+//slowly
 public  class FastBow extends Module {
     public FastBow() {
         super("FastBow","Fast Bow",  Category.COMBAT);

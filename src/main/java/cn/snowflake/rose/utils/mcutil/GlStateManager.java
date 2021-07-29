@@ -7,7 +7,7 @@ import org.lwjgl.opengl.GL11;
 
 import net.minecraft.client.renderer.OpenGlHelper;
 
-
+// minecraft 1.8 version
 public class GlStateManager
 {
     private static GlStateManager.AlphaState alphaState = new GlStateManager.AlphaState((GlStateManager.GlStateManager$1)null);

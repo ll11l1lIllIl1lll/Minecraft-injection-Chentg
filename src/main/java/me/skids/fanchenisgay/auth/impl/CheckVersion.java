@@ -1,10 +1,9 @@
-package me.skids.margeleisgay.auth.impl;
+package me.skids.fanchenisgay.auth.impl;
 
 import cn.snowflake.rose.Client;
-import cn.snowflake.rose.NativeMethod;
 import cn.snowflake.rose.utils.auth.HttpUtils;
 import cn.snowflake.rose.utils.auth.ShitUtil;
-import me.skids.margeleisgay.auth.AuthModule;
+import me.skids.fanchenisgay.auth.AuthModule;
 import org.apache.logging.log4j.LogManager;
 
 import java.awt.*;

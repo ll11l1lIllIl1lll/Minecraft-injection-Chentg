@@ -8,7 +8,6 @@ import com.darkmagician6.eventapi.EventTarget;
 
 
 public class NoFall extends Module {
-    private int hypixel;
     public Value<String> mode = new Value("NoFall_Mode", "Mode", 0);
 
     public NoFall() {

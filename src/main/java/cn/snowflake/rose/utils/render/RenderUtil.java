@@ -1,7 +1,6 @@
 package cn.snowflake.rose.utils.render;
 
 import cn.snowflake.rose.utils.math.MathUtils;
-import cn.snowflake.rose.utils.mcutil.AltAxisAlignedBB;
 import cn.snowflake.rose.utils.mcutil.GlStateManager;
 import cn.snowflake.rose.utils.other.JReflectUtility;
 import net.minecraft.client.Minecraft;
@@ -435,7 +434,7 @@ public enum	 RenderUtil {
         GL11.glPopMatrix();
     }
 
-    public static void startDrawingESPs(final AltAxisAlignedBB bb, final float r, final float b, final float g) {
+    public static void startDrawingESPs(final AxisAlignedBB bb, final float r, final float b, final float g) {
         GL11.glPushMatrix();
         GL11.glEnable(3042);
         GL11.glBlendFunc(770, 771);
@@ -459,7 +458,7 @@ public enum	 RenderUtil {
         GL11.glPopMatrix();
     }
 
-    public static void drawOutlinedBoundingBox(final AltAxisAlignedBB par1AxisAlignedBB) {
+    public static void drawOutlinedBoundingBox(final AxisAlignedBB par1AxisAlignedBB) {
         final Tessellator var2 = Tessellator.instance;
         var2.startDrawing(3);
         var2.addVertex(par1AxisAlignedBB.minX, par1AxisAlignedBB.minY, par1AxisAlignedBB.minZ);
@@ -487,7 +486,7 @@ public enum	 RenderUtil {
         var2.draw();
     }
 
-    public static void drawBoundingBox(final AltAxisAlignedBB axisalignedbb) {
+    public static void drawBoundingBox(final AxisAlignedBB axisalignedbb) {
         final Tessellator tessellator = Tessellator.instance;
         tessellator.startDrawingQuads();
         tessellator.addVertex(axisalignedbb.minX, axisalignedbb.minY, axisalignedbb.minZ);

@@ -4,7 +4,6 @@ import cn.snowflake.rose.events.impl.EventRender3D;
 import cn.snowflake.rose.mod.Category;
 import cn.snowflake.rose.mod.Module;
 import cn.snowflake.rose.utils.*;
-import cn.snowflake.rose.utils.mcutil.AltAxisAlignedBB;
 import cn.snowflake.rose.utils.other.JReflectUtility;
 import cn.snowflake.rose.utils.render.RenderUtil;
 import com.darkmagician6.eventapi.EventTarget;
@@ -18,6 +17,7 @@ import net.minecraft.entity.passive.EntityAnimal;
 import net.minecraft.entity.passive.EntityBat;
 import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.util.AxisAlignedBB;
 import org.lwjgl.opengl.GL11;
 
 import java.util.HashMap;
@@ -57,7 +57,7 @@ public class ESP extends Module {
         GL11.glLineWidth((float)1.0f);
         GL11.glEnable((int)2848);
         GL11.glColor3d(r,g,b);
-        RenderUtil.drawOutlinedBoundingBox(new AltAxisAlignedBB(
+        RenderUtil.drawOutlinedBoundingBox(AxisAlignedBB.getBoundingBox(
                 entity.boundingBox.minX
                         - 0.05
                         - entity.posX
@@ -103,18 +103,18 @@ public class ESP extends Module {
                         GL11.glColor4d((double) 1.0, (double) 1.0, (double) 1.0, (double) 0.0);
                         double size = 0.25;
                         double boundindY = entity.boundingBox.maxY - entity.boundingBox.minY;
-                        RenderUtil.drawBoundingBox(new AltAxisAlignedBB(posX - size, (double) posY, posZ - size, posX + size, (double) (posY + boundindY), posZ + size));
+                        RenderUtil.drawBoundingBox(AxisAlignedBB.getBoundingBox(posX - size, (double) posY, posZ - size, posX + size, (double) (posY + boundindY), posZ + size));
                         RenderUtil.renderOne();//renderOne
-                        RenderUtil.drawBoundingBox(new AltAxisAlignedBB(posX - size, (double) posY, posZ - size, posX + size, (double) (posY + boundindY), posZ + size));
+                        RenderUtil.drawBoundingBox(AxisAlignedBB.getBoundingBox(posX - size, (double) posY, posZ - size, posX + size, (double) (posY + boundindY), posZ + size));
                         GL11.glStencilFunc((int) 512, (int) 0, (int) 15);
                         GL11.glStencilOp((int) 7681, (int) 7681, (int) 7681);
                         GL11.glPolygonMode((int) 1032, (int) 6914);
-                        RenderUtil.drawBoundingBox(new AltAxisAlignedBB(posX - size, (double) posY, posZ - size, posX + size, (double) (posY + boundindY), posZ + size));
+                        RenderUtil.drawBoundingBox(AxisAlignedBB.getBoundingBox(posX - size, (double) posY, posZ - size, posX + size, (double) (posY + boundindY), posZ + size));
                         GL11.glStencilFunc((int) 514, (int) 1, (int) 15);
                         GL11.glStencilOp((int) 7680, (int) 7680, (int) 7680);
                         GL11.glPolygonMode((int) 1032, (int) 6913);
                         RenderUtil.setColor(entity1);//draw
-                        RenderUtil.drawBoundingBox(new AltAxisAlignedBB(posX - size, (double) posY, posZ - size, posX + size, (double) (posY + boundindY), posZ + size));
+                        RenderUtil.drawBoundingBox(AxisAlignedBB.getBoundingBox(posX - size, (double) posY, posZ - size, posX + size, (double) (posY + boundindY), posZ + size));
                         GL11.glPolygonOffset((float) 1.0f, (float) 2000000.0f);
                         GL11.glDisable((int) 10754);
                         GL11.glEnable((int) 2929);

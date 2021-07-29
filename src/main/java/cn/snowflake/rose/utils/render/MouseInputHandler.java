@@ -1,6 +1,7 @@
 package cn.snowflake.rose.utils.render;
 import org.lwjgl.input.Mouse;
 
+// slowly
 public class MouseInputHandler {
     public boolean clicked;
     private int button;

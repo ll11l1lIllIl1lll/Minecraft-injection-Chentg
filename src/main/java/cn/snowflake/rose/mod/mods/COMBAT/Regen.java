@@ -17,6 +17,7 @@ import net.minecraft.network.play.client.C08PacketPlayerBlockPlacement;
 import net.minecraft.network.play.client.C09PacketHeldItemChange;
 import org.apache.logging.log4j.LogManager;
 
+//
 public class Regen extends Module {
     public static Value<Double> slot = new Value("Regen_Slot", 9d, 1d, 9d, 1d);
     private Value<Double> eatdelay = new Value<Double>("Regen_EatDelay", 50.0, 0.0, 1000.0, 10.0);
@@ -82,9 +83,7 @@ public class Regen extends Module {
 
 
     private void EatFood() {
-//        int slotId = this.getFreeSlot();
         int foodID = this.slot.getValueState().intValue();
-//        if (slotId != -1) {
         if (foodID != -1 && this.useTimer.isDelayComplete(this.eatdelay.getValueState().longValue())) {
             int old = this.mc.thePlayer.inventory.currentItem;
 
@@ -110,16 +109,5 @@ public class Regen extends Module {
 //        }
     }
 
-    private int getFreeSlot() {
-        int id = 36;
-        while (id < 45) {
-            Slot currentSlot = this.mc.thePlayer.inventoryContainer.getSlot(id);
-            if (!currentSlot.getHasStack()) {
-                return id;
-            }
-            ++id;
-        }
-        return -1;
-    }
 
 }

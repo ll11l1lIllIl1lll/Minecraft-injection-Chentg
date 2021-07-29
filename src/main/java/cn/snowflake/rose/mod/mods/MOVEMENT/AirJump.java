@@ -6,7 +6,7 @@ import cn.snowflake.rose.mod.Module;
 import com.darkmagician6.eventapi.EventTarget;
 
 
-
+//slowly
 public class AirJump
         extends Module {
     public AirJump() {

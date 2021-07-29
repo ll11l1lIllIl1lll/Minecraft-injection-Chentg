@@ -7,6 +7,7 @@ import org.lwjgl.BufferUtils;
 import org.lwjgl.util.glu.GLU;
 import org.lwjgl.util.vector.Matrix4f;
 
+// etb red
 public final class GLUProjection {
     private static GLUProjection instance;
     private final FloatBuffer coords = BufferUtils.createFloatBuffer((int)3);

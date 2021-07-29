@@ -1,12 +1,12 @@
-package me.skids.margeleisgay;
+package me.skids.fanchenisgay;
 
 import cn.snowflake.rose.NativeMethod;
 import cn.snowflake.rose.Chentg;
 import cn.snowflake.rose.utils.auth.HWIDUtils;
 import cn.snowflake.rose.utils.auth.HttpUtils;
 import cn.snowflake.rose.utils.other.JReflectUtility;
-import me.skids.margeleisgay.auth.AuthModule;
-import me.skids.margeleisgay.auth.impl.*;
+import me.skids.fanchenisgay.auth.AuthModule;
+import me.skids.fanchenisgay.auth.impl.*;
 import net.minecraft.client.Minecraft;
 import org.lwjgl.opengl.Display;
 

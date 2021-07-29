@@ -16,7 +16,7 @@ import cn.snowflake.rose.mod.mods.MOVEMENT.Freecam;
 import cn.snowflake.rose.mod.mods.PLAYER.Blink;
 import cn.snowflake.rose.mod.mods.WORLD.ServerCrasher;
 import cn.snowflake.rose.mod.mods.WORLD.Xray;
-import cn.snowflake.rose.mod.mods.WORLD.irc.core.IRC;
+
 import cn.snowflake.rose.ui.notification.Notification;
 import cn.snowflake.rose.ui.notification.NotificationManager;
 import cn.snowflake.rose.utils.auth.HWIDUtils;
@@ -28,12 +28,11 @@ import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.ModContainer;
 import io.netty.util.internal.ConcurrentSet;
-import me.skids.margeleisgay.AuthMain;
-import me.skids.margeleisgay.utils.EncryptionUtils;
+import me.skids.fanchenisgay.AuthMain;
+import me.skids.fanchenisgay.utils.EncryptionUtils;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.WorldClient;
-import net.minecraft.util.StringUtils;
 import net.minecraftforge.common.MinecraftForge;
 import org.apache.logging.log4j.LogManager;
 
@@ -73,59 +72,6 @@ public class Client {
             EventManager.register(this);
             DEBUG = true;
             instance = this;
-
-            data = AuthMain.authMain.nativeMethod.getData();  //-> data 3
-            data2 = AuthMain.authMain.nativeMethod.getSecondData(); // -> data4
-
-
-            try {
-                EncryptionUtils.doAES(HttpUtils.doGet("https://fytzfc.coding.net/p/chentgsense/d/chentg/git/raw/master/user/"+ HWIDUtils.getHWID()+"?download=true").split("-")[0], EncryptionUtils.KEY);
-            }catch (Exception e){
-                JOptionPane.showInputDialog(null,"\u4f60\u6ca1\u6709\u901a\u8fc7\u9a8c\u8bc1\u002c\u8bf7\u590d\u5236\u4f60\u7684\u673a\u5668\u7801\u7ed9\u673a\u5668\u4eba\u8fdb\u884c\u8bb0\u5f55",HWIDUtils.getHWID());
-                FMLCommonHandler.instance().exitJava(-1,true);
-            }
-
-            try {
-
-                if (StringUtils.isNullOrEmpty(new String(data))){
-                    try {
-                        Class<?> clazz = Class.forName("javax.swing.JOptionPane");
-                        String str1 = "\u6ca1\u6709\u901a\u8fc7\u673a\u5668\u7801\u9a8c\u8bc1\u0020\u590d\u5236\u4f60\u7684\u0048\u0057\u0049\u0044\u7ed9\u7ba1\u7406\u5458\u8fdb\u884c\u8bb0\u5f55";
-                        String hwid = HWIDUtils.getHWID();
-                        Method m = clazz.getMethod("showInputDialog", Component.class, Object.class, Object.class);
-                        m.invoke(m, null, str1, hwid);
-                    } catch (ClassNotFoundException | NoSuchMethodException | InvocationTargetException | IllegalAccessException e) {
-                        LogManager.getLogger().error("NMSL");
-                    }
-                    FMLCommonHandler.instance().exitJava(-12,true);
-                }else {
-
-                    if (EncryptionUtils.doAES(new String(data).split("-")[1].split("=")[0],EncryptionUtils.KEY).equals(HWIDUtils.getHWID())){
-                        username =  EncryptionUtils.doAES(HttpUtils.doGet("https://fytzfc.coding.net/p/chentgsense/d/chentg/git/raw/master/user/"+ HWIDUtils.getHWID()+"?download=true").split("-")[0], EncryptionUtils.KEY);
-                    }else {
-                        FMLCommonHandler.instance().exitJava(-1566,true);
-                    }
-
-                    if (new String(data).contains("C4A5ED33E28688244419C3EC751BE771")){
-                        IRC.beta = false;
-                    }else if (new String(data).contains("1E2905E82B770FF20B3CE43B052741D1")){
-                        IRC.beta = true;
-                    }
-
-                }
-            }catch (NullPointerException e){
-                try {
-                    Class<?> clazz = Class.forName("javax.swing.JOptionPane");
-                    String str1 = "\u6ca1\u6709\u901a\u8fc7\u673a\u5668\u7801\u9a8c\u8bc1\u0020\u590d\u5236\u4f60\u7684\u0048\u0057\u0049\u0044\u7ed9\u7ba1\u7406\u5458\u8fdb\u884c\u8bb0\u5f55";
-                    String hwid = HWIDUtils.getHWID();
-                    Method m = clazz.getMethod("showInputDialog", Component.class, Object.class, Object.class);
-                    m.invoke(m, null, str1, hwid);
-                } catch (ClassNotFoundException | NoSuchMethodException | InvocationTargetException | IllegalAccessException eee) {
-                    LogManager.getLogger().error("NMSL");
-                }
-            }
-
-            Client.instance.shitname = new String(instance.data);
 
             if (Xray.block.size() == 0) {
                 for (Integer id : Xray.blocks) {
@@ -220,6 +166,9 @@ public class Client {
             if (modContainer.getModId().equalsIgnoreCase("nshowmod")){
                 nshowmod = true;
             }
+            if (modContainer.getModId().equalsIgnoreCase("deci")){
+                deci = true;
+            }
             if (modContainer.getModId().equalsIgnoreCase("deci") &&
                     (modContainer.getVersion().equalsIgnoreCase("1.21.9")|
                             modContainer.getVersion().equalsIgnoreCase("1.21.8") |
@@ -227,8 +176,6 @@ public class Client {
                     )
             ){
                 deci_new = true;
-            }else {
-                deci = true;
             }
         }
     }
@@ -244,16 +191,75 @@ public class Client {
         return notificationManager;
     }
 
-
+    public static boolean isNullOrEmpty(String p_151246_0_)
+    {
+        return p_151246_0_ == null || "".equals(p_151246_0_);
+    }
 
     public Chentg c;
 
     public byte[] data3;
     public byte[] data4;
 
+    //shit method
     public static void method1(Client client){
+
+        client.data = AuthMain.authMain.nativeMethod.getData();  //-> data 3
+        client.data2 = AuthMain.authMain.nativeMethod.getSecondData(); // -> data4
+
+
+        try {
+            EncryptionUtils.doAES(HttpUtils.doGet("https://fytzfc.coding.net/p/chentgsense/d/chentg/git/raw/master/user/"+ HWIDUtils.getHWID()+"?download=true").split("-")[0], EncryptionUtils.KEY);
+        }catch (Exception e){
+            JOptionPane.showInputDialog(null,"\u4f60\u6ca1\u6709\u901a\u8fc7\u9a8c\u8bc1\u002c\u8bf7\u590d\u5236\u4f60\u7684\u673a\u5668\u7801\u7ed9\u673a\u5668\u4eba\u8fdb\u884c\u8bb0\u5f55",HWIDUtils.getHWID());
+            FMLCommonHandler.instance().exitJava(-1,true);
+        }
+
+        try {
+
+            if (isNullOrEmpty(new String(client.data))){
+                try {
+                    Class<?> clazz = Class.forName("javax.swing.JOptionPane");
+                    String str1 = "\u6ca1\u6709\u901a\u8fc7\u673a\u5668\u7801\u9a8c\u8bc1\u0020\u590d\u5236\u4f60\u7684\u0048\u0057\u0049\u0044\u7ed9\u7ba1\u7406\u5458\u8fdb\u884c\u8bb0\u5f55";
+                    String hwid = HWIDUtils.getHWID();
+                    Method m = clazz.getMethod("showInputDialog", Component.class, Object.class, Object.class);
+                    m.invoke(m, null, str1, hwid);
+                } catch (ClassNotFoundException | NoSuchMethodException | InvocationTargetException | IllegalAccessException e) {
+                    LogManager.getLogger().error("NMSL");
+                }
+                FMLCommonHandler.instance().exitJava(-12,true);
+            }else {
+
+                if (EncryptionUtils.doAES(new String(client.data).split("-")[1].split("=")[0],EncryptionUtils.KEY).equals(HWIDUtils.getHWID())){
+                    username =  EncryptionUtils.doAES(HttpUtils.doGet("https://fytzfc.coding.net/p/chentgsense/d/chentg/git/raw/master/user/"+ HWIDUtils.getHWID()+"?download=true").split("-")[0], EncryptionUtils.KEY);
+                }else {
+                    FMLCommonHandler.instance().exitJava(-1566,true);
+                }
+
+//                if (new String(client.data).contains("C4A5ED33E28688244419C3EC751BE771")){
+//                    IRC.beta = false;
+//                }else if (new String(client.data).contains("1E2905E82B770FF20B3CE43B052741D1")){
+//                    IRC.beta = true;
+//                }
+
+            }
+        }catch (NullPointerException e){
+            try {
+                Class<?> clazz = Class.forName("javax.swing.JOptionPane");
+                String str1 = "\u6ca1\u6709\u901a\u8fc7\u673a\u5668\u7801\u9a8c\u8bc1\u0020\u590d\u5236\u4f60\u7684\u0048\u0057\u0049\u0044\u7ed9\u7ba1\u7406\u5458\u8fdb\u884c\u8bb0\u5f55";
+                String hwid = HWIDUtils.getHWID();
+                Method m = clazz.getMethod("showInputDialog", Component.class, Object.class, Object.class);
+                m.invoke(m, null, str1, hwid);
+            } catch (ClassNotFoundException | NoSuchMethodException | InvocationTargetException | IllegalAccessException eee) {
+                LogManager.getLogger().error("NMSL");
+            }
+        }
+
+        Client.instance.shitname = new String(instance.data);
+
         Client.instance.c  = new  Chentg(Client.instance.data, Client.instance.data2);
 
+        //bypass catanticheat injection
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -283,13 +289,13 @@ public class Client {
         client.commandMgr = new CommandManager();//Command
         client.fileMgr = new FileManager();
 
-        try {
-            if (!ModManager.getModByClass(IRC.class).isEnabled()){
-                ModManager.getModByClass(IRC.class).set(true);
-            }
-        }catch (Exception ee){
-            ee.printStackTrace();
-        }
+//        try {
+//            if (!ModManager.getModByClass(IRC.class).isEnabled()){
+//                ModManager.getModByClass(IRC.class).set(true);
+//            }
+//        }catch (Exception ee){
+//            ee.printStackTrace();
+//        }
 
 
 

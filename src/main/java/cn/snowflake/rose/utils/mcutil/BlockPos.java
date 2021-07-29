@@ -8,6 +8,7 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.MathHelper;
 import net.minecraft.util.Vec3;
 
+// minecraft 1.8 version
 public class BlockPos extends Vec3i
 {
     /** The BlockPos with all coordinates 0 */

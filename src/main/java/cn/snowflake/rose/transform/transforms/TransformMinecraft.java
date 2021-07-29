@@ -2,15 +2,13 @@ package cn.snowflake.rose.transform.transforms;
 
 import cn.snowflake.rose.Chentg;
 import cn.snowflake.rose.Client;
-import cn.snowflake.rose.NativeMethod;
 import cn.snowflake.rose.events.impl.EventGuiOpen;
 import cn.snowflake.rose.events.impl.EventKey;
 import cn.snowflake.rose.events.impl.EventTick;
 import cn.snowflake.rose.mod.Module;
 import cn.snowflake.rose.utils.asm.ASMUtil;
 import com.darkmagician6.eventapi.EventManager;
-import cpw.mods.fml.common.FMLCommonHandler;
-import me.skids.margeleisgay.AuthMain;
+import me.skids.fanchenisgay.AuthMain;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiChat;
 import net.minecraft.client.gui.GuiScreen;

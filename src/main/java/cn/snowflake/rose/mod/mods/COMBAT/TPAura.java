@@ -43,6 +43,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 import static org.lwjgl.opengl.GL11.*;
 
+//sigma
 public class TPAura extends Module {
     public Value<String> Mode;
     private Value<Double> MAXT;

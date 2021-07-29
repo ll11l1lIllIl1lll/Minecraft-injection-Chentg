@@ -11,7 +11,7 @@ import org.objectweb.asm.tree.*;
 public class TransformFontRenderer implements Opcodes {
 
     public static void transformFontRenderer(ClassNode classNode, MethodNode methodInsnNode){
-        if (methodInsnNode.desc.equalsIgnoreCase("(Ljava/lang/String;IIIZ)I")
+        if (methodInsnNode.desc.equalsIgnoreCase("(Ljava/lang/String;IIIZ)Interval")
                 && (methodInsnNode.name.equalsIgnoreCase("drawString")
                 || methodInsnNode.name.equalsIgnoreCase("func_85187_a") )
         ){

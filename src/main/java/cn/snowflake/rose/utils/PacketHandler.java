@@ -13,9 +13,9 @@ import net.minecraft.network.NetworkManager;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
+//xenobyte
 public class PacketHandler extends ChannelDuplexHandler
 {
-    public static String AntiCatAntiCheatScreenShot = "";
 
     public PacketHandler()
     {
@@ -50,7 +50,7 @@ public class PacketHandler extends ChannelDuplexHandler
     public boolean onPacket(Object packet, PacketHandler.Side side) {
             boolean suc = true;
             if (ScreenProtect.mode2.isCurrentMode("close")){
-
+                //azrael
                 if(packet instanceof FMLProxyPacket) {
                     //ÈÆ¹ýDecimationf½ØÍ¼Azrael
                     if (side == Side.IN && ((FMLProxyPacket) packet).channel().equalsIgnoreCase("ctx")) {

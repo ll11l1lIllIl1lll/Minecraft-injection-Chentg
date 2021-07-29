@@ -6,7 +6,7 @@ import cn.snowflake.rose.utils.mcutil.BlockPos;
 
 import java.util.ArrayList;
 import java.util.Iterator;
-
+// slowly
 public class AStarPath {
     private BlockPos blockPosFrom;
     private BlockPos blockPosTo;

@@ -1,13 +1,8 @@
 package cn.snowflake.rose;
 
-import cn.snowflake.rose.transform.transforms.TransformMinecraft;
 import cn.snowflake.rose.utils.auth.HWIDUtils;
 import cpw.mods.fml.common.FMLCommonHandler;
-import me.skids.margeleisgay.AuthMain;
 import org.apache.logging.log4j.LogManager;
-import org.objectweb.asm.Opcodes;
-import org.objectweb.asm.Type;
-import org.objectweb.asm.tree.*;
 
 import java.awt.*;
 import java.lang.reflect.InvocationTargetException;

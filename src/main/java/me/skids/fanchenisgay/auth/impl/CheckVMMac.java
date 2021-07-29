@@ -1,6 +1,6 @@
-package me.skids.margeleisgay.auth.impl;
+package me.skids.fanchenisgay.auth.impl;
 
-import me.skids.margeleisgay.auth.AuthModule;
+import me.skids.fanchenisgay.auth.AuthModule;
 
 import java.net.InetAddress;
 import java.net.InterfaceAddress;

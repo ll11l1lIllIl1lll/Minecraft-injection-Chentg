@@ -10,7 +10,7 @@ import net.minecraft.util.MathHelper;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Random;
-
+// minecraft 1.8 version
 public enum EnumFacing implements IStringSerializable
 {
     DOWN("DOWN", 0, 0, 1, -1, "down", EnumFacing.AxisDirection.NEGATIVE, EnumFacing.Axis.Y, new Vec3i(0, -1, 0)),

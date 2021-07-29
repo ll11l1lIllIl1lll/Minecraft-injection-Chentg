@@ -4,7 +4,6 @@ package cn.snowflake.rose.mod.mods.RENDER;
 import cn.snowflake.rose.events.impl.EventRender3D;
 import cn.snowflake.rose.mod.Category;
 import cn.snowflake.rose.mod.Module;
-import cn.snowflake.rose.utils.mcutil.AltAxisAlignedBB;
 import cn.snowflake.rose.utils.render.ColorUtil;
 import cn.snowflake.rose.utils.mcutil.GlStateManager;
 import cn.snowflake.rose.utils.Value;
@@ -13,6 +12,7 @@ import net.minecraft.client.renderer.RenderHelper;
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityEnderChest;
+import net.minecraft.util.AxisAlignedBB;
 import org.lwjgl.opengl.GL11;
 
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -76,7 +76,7 @@ public class ChestESP extends Module {
                     maxY = renderY + 0.875;
                     maxZ = (renderZ + 0.9375) - posZDoubleChest;
 
-                    drawBlockESP(new AltAxisAlignedBB(minX, minY, minZ, maxX, maxY, maxZ), color.getRed() / 255.0f, color.getGreen() / 255.0f, color.getBlue() / 255.0f,
+                    drawBlockESP(AxisAlignedBB.getBoundingBox(minX, minY, minZ, maxX, maxY, maxZ), color.getRed() / 255.0f, color.getGreen() / 255.0f, color.getBlue() / 255.0f,
                             (float) alpha.getValueState().floatValue(), color.getRed() / 255.0f, color.getGreen() / 255.0f,color.getBlue() / 255.0f, 1, (float) Width.getValueState().floatValue(), Alpha.getValueState().booleanValue(), Alpha.getValueState().booleanValue());
 
                 }
@@ -85,7 +85,7 @@ public class ChestESP extends Module {
     }
     }
 
-    public static void drawBlockESP(AltAxisAlignedBB axisAlignedBB, float red, float green, float blue, float alpha, float lineRed, float lineGreen, float lineBlue, float lineAlpha, float lineWidth, boolean bounding, boolean line) {
+    public static void drawBlockESP(AxisAlignedBB axisAlignedBB, float red, float green, float blue, float alpha, float lineRed, float lineGreen, float lineBlue, float lineAlpha, float lineWidth, boolean bounding, boolean line) {
         GL11.glPushMatrix();
         GL11.glEnable(GL11.GL_BLEND);
         GL11.glBlendFunc(770, 771);
@@ -96,12 +96,12 @@ public class ChestESP extends Module {
         GL11.glDepthMask(false);
         GL11.glColor4f(red, green, blue, alpha);
         if (bounding) {
-            drawBoundingBox(new AltAxisAlignedBB(axisAlignedBB.minX, axisAlignedBB.minY, axisAlignedBB.minZ, axisAlignedBB.maxX, axisAlignedBB.maxY, axisAlignedBB.maxZ));
+            drawBoundingBox(AxisAlignedBB.getBoundingBox(axisAlignedBB.minX, axisAlignedBB.minY, axisAlignedBB.minZ, axisAlignedBB.maxX, axisAlignedBB.maxY, axisAlignedBB.maxZ));
         }
         GL11.glLineWidth(lineWidth);
         GL11.glColor4f(lineRed, lineGreen, lineBlue, lineAlpha);
         if (line) {
-            drawOutlinedBoundingBox(new AltAxisAlignedBB(axisAlignedBB.minX, axisAlignedBB.minY, axisAlignedBB.minZ, axisAlignedBB.maxX, axisAlignedBB.maxY, axisAlignedBB.maxZ));
+            drawOutlinedBoundingBox(AxisAlignedBB.getBoundingBox(axisAlignedBB.minX, axisAlignedBB.minY, axisAlignedBB.minZ, axisAlignedBB.maxX, axisAlignedBB.maxY, axisAlignedBB.maxZ));
         }
         GL11.glDisable(GL11.GL_LINE_SMOOTH);
         GL11.glEnable(GL11.GL_TEXTURE_2D);
@@ -114,7 +114,7 @@ public class ChestESP extends Module {
         GL11.glDisable(GL11.GL_BLEND);
         GL11.glPopMatrix();
     }
-    private static void drawOutlinedBoundingBox(AltAxisAlignedBB aa) {
+    private static void drawOutlinedBoundingBox(AxisAlignedBB aa) {
         Tessellator tessellator = Tessellator.instance;
         tessellator.startDrawing(3);
         tessellator.addVertex(aa.minX, aa.minY, aa.minZ);
@@ -142,7 +142,7 @@ public class ChestESP extends Module {
         tessellator.draw();
     }
 
-    private static void drawBoundingBox(AltAxisAlignedBB aa)  {
+    private static void drawBoundingBox(AxisAlignedBB aa)  {
         Tessellator tessellator = Tessellator.instance;
         tessellator.startDrawingQuads();
         tessellator.addVertex(aa.minX, aa.minY, aa.minZ);

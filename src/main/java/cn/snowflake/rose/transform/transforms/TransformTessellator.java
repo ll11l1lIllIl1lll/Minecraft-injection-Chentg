@@ -14,7 +14,7 @@ public class TransformTessellator implements Opcodes {
             insnList.add(ASMUtil.newInstance(INVOKESTATIC, Type.getInternalName(TransformBlock.class), "isXrayEnabled", "()Z"));
             LabelNode labelNode = new LabelNode();
             insnList.add(new JumpInsnNode(IFEQ,labelNode));
-            insnList.add(ASMUtil.newInstance(INVOKESTATIC, Type.getInternalName(TransformTessellator.class), "getOpacity", "()I"));
+            insnList.add(ASMUtil.newInstance(INVOKESTATIC, Type.getInternalName(TransformTessellator.class), "getOpacity", "()Interval"));
             insnList.add(new VarInsnNode(ISTORE,4));
             insnList.add(labelNode);
             methodNode.instructions.insert(insnList);

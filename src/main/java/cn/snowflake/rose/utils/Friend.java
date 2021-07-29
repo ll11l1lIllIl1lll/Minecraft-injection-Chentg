@@ -1,7 +1,6 @@
 package cn.snowflake.rose.utils;
 
-import net.minecraft.entity.EntityLivingBase;
-
+//slowly
 public class Friend {
     private String name;
     private String alias;
@@ -15,9 +14,6 @@ public class Friend {
         return this.name;
     }
 
-    public String getAlias() {
-        return this.alias;
-    }
 
     public void setAlias(String alias) {
         this.alias = alias;

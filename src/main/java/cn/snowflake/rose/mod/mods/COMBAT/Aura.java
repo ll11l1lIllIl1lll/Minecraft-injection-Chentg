@@ -43,11 +43,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Random;
 
-/**
- *
- * @author TAIFENG
- *
- */
+
 public class Aura extends Module {
     private TimeHelper time = new TimeHelper();
     public TimeHelper timer2 = new TimeHelper();

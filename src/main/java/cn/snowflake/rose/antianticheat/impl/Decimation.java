@@ -33,8 +33,8 @@ public class Decimation {
         @EventTarget
         public void onFml(EventFMLChannels eventFMLChannels) {
             if (!ScreenProtect.mode2.isCurrentMode("close")){
-                    if (Client.deci_new ? eventFMLChannels.iMessage.toString().contains("deci.aE.a$af") : //true
-                            eventFMLChannels.iMessage.toString().contains("deci.aE.a$ab") //false
+                    if (Client.deci_new ? eventFMLChannels.iMessage.toString().contains("deci.aE.a$af") :
+                            eventFMLChannels.iMessage.toString().contains("deci.aE.a$ab")
                     ) {
                     Constructor<?> constructor = null;
                     try {
@@ -99,6 +99,7 @@ public class Decimation {
             }
         }
 
+        // ehacks
         @EventTarget
         public void inServer(EventUpdate eventUpdate){
 

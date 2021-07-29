@@ -23,7 +23,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
-
+// slowly
 public class AStarCustomPathFinder {
     private Vec3Util startVec3;
     private Vec3Util endVec3;

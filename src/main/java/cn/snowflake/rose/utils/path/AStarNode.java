@@ -1,6 +1,6 @@
 package cn.snowflake.rose.utils.path;
 
-
+// slowly
 public class AStarNode {
     private double x;
     private double y;

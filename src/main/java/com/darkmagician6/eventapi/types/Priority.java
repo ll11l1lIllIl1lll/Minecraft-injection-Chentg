@@ -2,7 +2,7 @@ package com.darkmagician6.eventapi.types;
 
 /**
  * The priority for the dispatcher to determine what method should be invoked first.
- * Ram was talking about the memory usage of the way I store the data so I decided
+ * Ram was talking about the memory usage of the way Interval store the data so Interval decided
  * to just use bytes for the priority because they take up only 8 bits of memory
  * per value compared to the 32 bits per value of an enum (Same as an integer).
  *
