@@ -8,10 +8,10 @@
 ## 关于本注入使用:
 
 配置:
-*`gradlew setDevWorkSpace idea`
+* `gradlew setDevWorkSpace idea`
 
 启动需要添加的jvm参数
-*`-Dfml.coreMods.load=net.minecraft.injection.ClientLoader`
+* `-Dfml.coreMods.load=net.minecraft.injection.ClientLoader`
 
 施放版本:
 * 链接: `https://pan.baidu.com/s/1RLJYwhlp0IfJSaTmEQNm5Q ` 
