@@ -1,11 +1,11 @@
 # Season 1.7.10 (Chentg)
 
-Chentg  
+## Chentg  
 * 这个season付费版本为 `QQ645636194` 所销售, 改名的原因是因为`QQ645636194`
 * 十分讨厌Chentg这个人,`QQ645636194`坚持让`我`把`season`改为`chentg`
 * * 其功能全由`我`来开发
 
-关于本注入使用:
+## 关于本注入使用:
 
 配置:
 *`gradlew setDevWorkSpace idea`
