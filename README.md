@@ -15,7 +15,7 @@
 
 施放版本:
 * 链接: `https://pan.baidu.com/s/1RLJYwhlp0IfJSaTmEQNm5Q ` 
-* 提取码:` m3ts`
+* 提取码: `m3ts`
 
 鸣谢:
 * lss233 提供的forge下载镜像 `http://lss233.littleservice.cn/repositories/minecraft`
